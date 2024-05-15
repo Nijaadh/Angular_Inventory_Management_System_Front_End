@@ -9,6 +9,7 @@ import { CustomerManagementComponent } from './customer-management/customer-mana
 import { EmployeeManagementComponent } from './employee-management/employee-management.component';
 
 import { EmployeeService } from './employee-management/services/employee.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { EmployeeService } from './employee-management/services/employee.service
   imports: [
     CommonModule,
     ProfileRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [EmployeeService],
 

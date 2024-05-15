@@ -1,49 +1,48 @@
 import { Injectable } from '@angular/core';
 import { Employee } from '../models/employee.model';
+import { HttpClient } from '@angular/common/http';
+import { Observable, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmployeeService {
 
-  constructor() { }
+  private baseUrl="http://localhost:8080/api/v1/employeeManagement/getAllEmployees"
+  constructor(private httpClient: HttpClient) {
 
- private employee:Employee={
-empID:"EMP-001",
-empFName:"Mohomed",
-empLName:"Nijaadh",
-empNic:"200021701711",
-empGender:"Male",
-empGmail:"mohomednijaadh.net@gmail.com",
-empDOB:"2000.08.04",
-empContactNo:"0774411765",
-empEMGContactNo:"0771234567",
-empAddress:"No.61/29 Kandy rd. Thihariya, Kalagedihena",
-empUserName:"maku",
-empUserRole:"Admin",
-empPassword:"Nijaadh20#",
-empCommonStatus:"ACTIVE"
+   }
 
- };
+//  getEmployeeList(): Observable<Employee[]>{
+//   return this.httpClient.get<Employee[]>(`${this.baseUrl}`);
+//  }
 
- public setEmployee(empID:String,empFName:String,empLName:String,empNic:String,empGender:String,empGmail:String,empDOB:String,empContactNo:String,empEMGContactNo:String,empAddress:String,empUserName:String,empUserRole:String,empPassword:String):Employee{
-  this.employee.empID=empID;
-  this.employee.empFName=empFName;
-  this.employee.empLName=empLName;
-  this.employee.empNic=empNic;
-  this.employee.empGender=empGender;
-  this.employee.empGmail=empGmail;
-  this.employee.empDOB=empDOB;
-  this.employee.empContactNo=empContactNo;
-  this.employee.empEMGContactNo=empEMGContactNo;
-  this.employee.empAddress=empAddress;
-  this.employee.empUserName=empUserName;
-  this.employee.empUserRole=empUserRole;
-  this.employee.empPassword=empPassword;
-  return this.employee;
- }
+getEmployeeList(): Observable<Employee[]> {
+  return this.httpClient.get<any>(this.baseUrl).pipe(
+    map(response => {
+      const payload = response.payload[0]; // Extract the array of employees from the payload
+      return payload.map((emp: any) => {
+        return {
+          empId: emp.empId,
+          empFName: emp.empFName,
+          empLName: emp.empLstName,
+          empNIC: emp.empNIC,
+          empGender: emp.empGender,
+          empDOB: emp.empDOB,
+          empEmail: emp.empEmail,
+          empAddress: emp.empAddress,
+          empContactNo: emp.empContactNo,
+          empEmgContactNo: emp.empEmgContactNo,
+          empUserName: emp.empUserName,
+          empPassword: emp.empPassword,
+          empCommonStatus: emp.empCommonStatus,
+          empRegisterdDate: emp.empRegisterdDate,
+          empLstUpdatedDated: emp.empLstUpdatedDated,
+          empRoleId: emp.empRoleId
+        };
+      });
+    })
+  );
+}
 
- public getEmployee():Employee{
-  return this.employee;
- }
 }

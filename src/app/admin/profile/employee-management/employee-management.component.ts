@@ -10,55 +10,100 @@ import { Employee } from './models/employee.model';
 export class EmployeeManagementComponent implements OnInit {
 
 
-  
-public isHiddenAddEmployeeContainer:boolean=false;
-public employee: Employee = {} as Employee;
 
-public employees:Employee[]=[];
+  public isHiddenAddEmployeeContainer: boolean = false;
+  // public employee: Employee = {} as Employee;
 
+  public lastEmployeeId: String | undefined="000";
 
-empID:String="EMP-001";
-empFName:String="";
-empLName:String="";
-empNic:String="";
-empGender:String="";
-empGmail:String="";
-empDOB:String="";
-empContactNo:String="";
-empEMGContactNo:String="";
-empAddress:String="";
-empUserName:String="";
-empUserRole:String="";
-empPassword:String="";
-empConformPassword:String="";
+  public employees: Employee[] = [];
 
 
+  empID: String | undefined = this.lastEmployeeId;
+  empFName: String = "";
+  empLName: String = "";
+  empNic: String = "";
+  empGender: String = "";
+  empGmail: String = "";
+  empDOB: String = "";
+  empContactNo: String = "";
+  empEMGContactNo: String = "";
+  empAddress: String = "";
+  empUserName: String = "";
+  empUserRole: String = "";
+  empPassword: String = "";
+  empConformPassword: String = "";
 
-  constructor(private employeeService:EmployeeService){
+
+
+  constructor(private employeeService: EmployeeService) {
 
   }
 
   ngOnInit(): void {
-    this.isHiddenAddEmployeeContainer=true;
-    this.employees.push(this.employeeService.getEmployee());
-    
+    this.isHiddenAddEmployeeContainer = true;
+    this.getEmployeeList();
+
+    // this.employees = [
+    //   {
+    //     empId: "EMP-001",
+    //     empFName: "Mohomed",
+    //     empLName: "Nijaadh",
+    //     empNic: "200021701711",
+    //     empGender: "Male",
+    //     empGmail: "mohomednijaadh.net@gmail.com",
+    //     empDOB: "2000.08.04",
+    //     empContactNo: "0774411765",
+    //     empEMGContactNo: "0771234567",
+    //     empAddress: "No.61/29 Kandy rd. Thihariya, Kalagedihena",
+    //     empUserName: "maku",
+    //     empPassword: "Nijaadh20#",
+    //     empCommonStatus: "ACTIVE",
+    //     empRoleId: "Admin",
+    //     empRegDate: "2024.05.15",
+    //     empUpdDate: "2024.05.15"
+
+    //   },
+    //   {
+
+    //     empId: "EMP-002",
+    //     empFName: "Zeenathul",
+    //     empLName: "Fahira",
+    //     empNic: "199911601622",
+    //     empGender: "Female",
+    //     empGmail: "zeenathulfahira.net@gmail.com",
+    //     empDOB: "1999.04.20",
+    //     empContactNo: "0774411765",
+    //     empEMGContactNo: "0774411765",
+    //     empAddress: "No. 255 mount rd. lavania, canada",
+    //     empUserName: "zeena",
+    //     empPassword: "Zeena19*",
+    //     empCommonStatus: "INACTIVE",
+    //     empRoleId: "Manager",
+    //     empRegDate: "2024.05.15",
+    //     empUpdDate: "2024.05.15"
+
+
+    //   }
+    // ]
+
   }
 
 
 
 
-  showANDhideAddEmployeeContainer():void{
-    if(this.isHiddenAddEmployeeContainer==true){
-      this.isHiddenAddEmployeeContainer=false;
+  showANDhideAddEmployeeContainer(): void {
+    if (this.isHiddenAddEmployeeContainer == true) {
+      this.isHiddenAddEmployeeContainer = false;
     }
-    else if(this.isHiddenAddEmployeeContainer==false){
-      this.isHiddenAddEmployeeContainer=true;
+    else if (this.isHiddenAddEmployeeContainer == false) {
+      this.isHiddenAddEmployeeContainer = true;
     }
 
-   
+
   }
 
-  clearFeilds():void{
+  clearFeilds(): void {
 
 
 
@@ -70,4 +115,18 @@ empConformPassword:String="";
     this.empGender = selectedGender;
   }
 
+
+  private getEmployeeList(): void {
+    this.employeeService.getEmployeeList().subscribe(data => {
+      this.employees = data;
+      console.log('Employees:', this.employees); // Log the retrieved employees to check if data is received
+    });
+
+    if (this.employees.length > 0) {
+      this.lastEmployeeId = this.employees[this.employees.length - 1].empId;
+      console.log("id"+this.lastEmployeeId)
+    }
+
+  }
+  
 }
