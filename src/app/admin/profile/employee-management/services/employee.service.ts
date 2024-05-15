@@ -19,7 +19,7 @@ export class EmployeeService {
 
 getEmployeeList(): Observable<Employee[]> {
   return this.httpClient.get<any>(this.baseUrl).pipe(
-    map(response => {
+    map (response => {
       const payload = response.payload[0]; // Extract the array of employees from the payload
       return payload.map((emp: any) => {
         return {

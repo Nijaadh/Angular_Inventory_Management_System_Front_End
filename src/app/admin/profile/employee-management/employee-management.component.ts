@@ -14,12 +14,12 @@ export class EmployeeManagementComponent implements OnInit {
   public isHiddenAddEmployeeContainer: boolean = false;
   // public employee: Employee = {} as Employee;
 
-  public lastEmployeeId: String | undefined="000";
+  public empLastEmployeeId: String | undefined="000";
 
   public employees: Employee[] = [];
 
 
-  empID: String | undefined = this.lastEmployeeId;
+  empID: String | undefined = this.empLastEmployeeId;
   empFName: String = "";
   empLName: String = "";
   empNic: String = "";
@@ -119,14 +119,25 @@ export class EmployeeManagementComponent implements OnInit {
   private getEmployeeList(): void {
     this.employeeService.getEmployeeList().subscribe(data => {
       this.employees = data;
-      console.log('Employees:', this.employees); // Log the retrieved employees to check if data is received
+      console.log('Employees:', this.employees);
+      
+      if (this.employees.length > 0) {
+        this.empLastEmployeeId = this.employees[this.employees.length - 1].empId;
+        console.log("id"+this.empLastEmployeeId)
+      }// Log the retrieved employees to check if data is received
     });
 
-    if (this.employees.length > 0) {
-      this.lastEmployeeId = this.employees[this.employees.length - 1].empId;
-      console.log("id"+this.lastEmployeeId)
-    }
+    
 
   }
+  empLastEmployeeID="EMP-003"
+  getNewEmployeeID(empLastEmployeeID:string):String{
+    const id = empLastEmployeeID.replace(/\D/g, '');
+    const newId=parseInt(id)+1;
+    const newEmpId="EMP-"+newId;
+    return newEmpId;
+  }
+
+  new=this.getNewEmployeeID(this.empLastEmployeeID)
   
 }
