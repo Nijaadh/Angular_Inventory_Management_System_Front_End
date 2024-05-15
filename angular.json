@@ -37,9 +37,15 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [            
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "src/app/admin/admin-dashboard.js"
+              
+             
+            ]
           },
           "configurations": {
             "production": {
@@ -104,5 +110,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "168ec46e-855d-4bdf-913f-826ecd305693"
   }
 }

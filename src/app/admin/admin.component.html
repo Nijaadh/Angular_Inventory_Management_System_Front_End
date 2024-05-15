@@ -1,0 +1,392 @@
+<!--========== HEADER ==========-->
+<header class="header">
+    <div class="header__container">
+        <!-- <img src="../../../../assets/img/perfil.jpg" alt="" class="header__img"> -->
+        <img src="../../assets/img/myDp.jpg" alt="" class="header__img">
+
+        <a href="#" class="header__logo">eMaster</a>
+
+
+        <div style="display: flex;">
+
+            <div class="btn-group">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="border-radius: 10px 0 0 10px;">Filter
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <li><a class="dropdown-item" href="#">Menu item</a></li>
+                  <li><a class="dropdown-item" href="#">Menu item</a></li>
+                  <li><a class="dropdown-item" href="#">Menu item</a></li>
+                </ul>
+              </div>
+
+              <!-- <mat-form-field>
+                <mat-label>Favorite animal</mat-label>
+                <mat-select [formControl]="animalControl" required>
+                  <mat-option>--</mat-option>
+                  @for (animal of animals; track animal) {
+                    <mat-option [value]="animal">{{animal.name}}</mat-option>
+                  }
+                </mat-select>
+                @if (animalControl.hasError('required')) {
+                  <mat-error>Please choose an animal</mat-error>
+                }
+       
+              </mat-form-field> -->
+
+            <div class="header__search">           
+                <input type="search" placeholder="Search" class="header__input">
+                <i class='bx bx-search header__icon'></i>
+            </div>
+        </div>
+        
+
+        <div class="header__toggle" >
+            <i class='bx bx-menu' id="header-toggle" ></i>
+        </div>
+    </div>
+</header>
+
+<!--========== NAV ==========-->
+
+<div class="nav" id="navbar">
+    <nav class="nav__container">
+        <div>
+            <a href="#" class="nav__link nav__logo">
+                <!-- <i class='bx bxs-disc nav__icon' ></i> -->
+                <i class='bx bxl-shopify'></i>
+                <span class="nav__logo-name">eMaster</span>
+            </a>
+
+            <div class="nav__list">
+                <div class="nav__items">
+                    <h3 class="nav__subtitle">Profile</h3>
+
+                    <a href="#" class="nav__link active">
+                        <i class='bx bx-home nav__icon'></i>
+                        <span class="nav__name">Home</span>
+                    </a>
+
+                    <div class="nav__dropdown">
+                        <a routerLink="profile" class="nav__link">
+                            <!-- <i class='bx bx-user nav__icon' ></i> -->
+                            <i class='bx bxs-user'></i>
+                            <span class="nav__name">Profile</span>
+                            <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i>
+                        </a>
+
+                        <div class="nav__dropdown-collapse">
+                            <div class="nav__dropdown-content">
+                                <a routerLink="profile/employeemanagement" class="nav__dropdown-item">Employee</a>
+                                <a href="#" class="nav__dropdown-item">Customer</a>
+                                <!-- <a href="#" class="nav__dropdown-item">Accounts</a> -->
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="nav__dropdown">
+                        <a href="#" class="nav__link">
+                            <i class='bx bxs-widget'></i>
+                            <span class="nav__name">Business Hub</span>
+                            <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i>
+                        </a>
+
+                        <div class="nav__dropdown-collapse">
+                            <div class="nav__dropdown-content">
+                                <a href="#" class="nav__dropdown-item">Company</a>
+                                <a href="#" class="nav__dropdown-item">Brand</a>
+                                <a href="#" class="nav__dropdown-item">Agency</a>
+                                <a href="#" class="nav__dropdown-item">Sales Rep</a>
+                            </div>
+
+                        </div>
+
+                        <div class="nav__dropdown-collapse">
+                            <div class="nav__dropdown-content">
+                                <a href="#" class="nav__dropdown-item">Product</a>
+                                <a href="#" class="nav__dropdown-item">Price</a>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                    <!-- <a href="#" class="nav__link">
+                            <i class='bx bx-message-rounded nav__icon' ></i>
+                            <span class="nav__name">Messages</span>
+                        </a> -->
+                </div>
+
+                <!-- *********************************************************************8 -->
+                <h3 h3 class="nav__subtitle">Purches</h3>
+
+                <div class="nav__dropdown">
+                    <a href="#" class="nav__link">
+                        <!-- <i class='bx bx-user nav__icon' ></i> -->
+                        <i class='bx bxs-store'></i>
+                        <span class="nav__name">Purches</span>
+                        <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i>
+                    </a>
+
+                    <div class="nav__dropdown-collapse">
+                        <div class="nav__dropdown-content">
+                            <a href="#" class="nav__dropdown-item">A.ReturnNote</a>
+                            <a href="#" class="nav__dropdown-item">AcceptedReturns</a>
+
+
+
+
+                            <!-- <a href="#" class="nav__dropdown-item">Accounts</a> -->
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="nav__dropdown-collapse">
+                        <div class="nav__dropdown-content">
+                            <a href="#" class="nav__dropdown-item">GRN</a>
+                            <a href="#" class="nav__dropdown-item">PucheseItems</a>
+                            <a href="#" class="nav__dropdown-item">Free Issues</a>
+
+
+
+                            <!-- <a href="#" class="nav__dropdown-item">Accounts</a> -->
+                        </div>
+
+
+                    </div>
+
+                    <div class="nav__dropdown-collapse">
+                        <div class="nav__dropdown-content">
+                            <a href="#" class="nav__dropdown-item">PurchesOrders</a>
+                            <a href="#" class="nav__dropdown-item">Order Note</a>
+                        </div>
+                    </div>
+
+                    <div class="nav__dropdown-collapse">
+                        <div class="nav__dropdown-content">
+                            <a href="#" class="nav__dropdown-item">PurchesReturns</a>
+                            <a href="#" class="nav__dropdown-item">Return Note</a>
+                        </div>
+                    </div>
+
+                    <div class="nav__dropdown-collapse">
+                        <div class="nav__dropdown-content">
+                            <a href="#" class="nav__dropdown-item">PurchesPayments</a>
+                            <a href="#" class="nav__dropdown-item">Due</a>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <!-- ************************************************************************************************ -->
+
+                <h3 h3 class="nav__subtitle">Sales</h3>
+
+                <div class="nav__dropdown">
+                    <a href="#" class="nav__link">
+                        <!-- <i class='bx bx-user nav__icon' ></i> -->
+                        <!-- <i class='bx bx-cart'></i> -->
+                        <i class='bx bxs-cart'></i>
+                        <span class="nav__name">Sales</span>
+                        <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i>
+                    </a>
+
+                    <div class="nav__dropdown-collapse">
+                        <div class="nav__dropdown-content">
+                            <a href="#" class="nav__dropdown-item">Invoice</a>
+                            <a href="#" class="nav__dropdown-item">SalesItems</a>
+                            <a href="#" class="nav__dropdown-item">Free Issues</a>
+
+
+
+                            <!-- <a href="#" class="nav__dropdown-item">Accounts</a> -->
+                        </div>
+
+
+                    </div>
+
+                    <div class="nav__dropdown-collapse">
+                        <div class="nav__dropdown-content">
+                            <a href="#" class="nav__dropdown-item">Sales Orders</a>
+                            <a href="#" class="nav__dropdown-item">Order Note</a>
+                        </div>
+                    </div>
+
+                    <div class="nav__dropdown-collapse">
+                        <div class="nav__dropdown-content">
+                            <a href="#" class="nav__dropdown-item">SalesReturns</a>
+                            <a href="#" class="nav__dropdown-item">Return Note</a>
+                        </div>
+                    </div>
+
+                    <div class="nav__dropdown-collapse">
+                        <div class="nav__dropdown-content">
+                            <a href="#" class="nav__dropdown-item">SalesPayments</a>
+                            <a href="#" class="nav__dropdown-item">Due</a>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+
+
+
+                <!-- *********************************************************************8 -->
+                <h3 h3 class="nav__subtitle">Damage</h3>
+
+                <div class="nav__dropdown">
+                    <a href="#" class="nav__link">
+                        <!-- <i class='bx bx-user nav__icon' ></i> -->
+                        <!-- <i class='bx bxs-bookmark-minus'></i> -->
+                        <i class='bx bxs-bookmarks'></i>
+                        <span class="nav__name">Damges</span>
+                        <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i>
+                    </a>
+
+                    <div class="nav__dropdown-collapse">
+                        <div class="nav__dropdown-content">
+                            <a href="#" class="nav__dropdown-item">Damage</a>
+                            <a href="#" class="nav__dropdown-item">Recovery</a>
+                            <a href="#" class="nav__dropdown-item">Payments</a>
+                            <!-- <a href="#" class="nav__dropdown-item">Accounts</a> -->
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <!-- ************************************************************************************8 -->
+                <h3 h3 class="nav__subtitle">Payment</h3>
+
+                <div class="nav__dropdown">
+                    <a href="#" class="nav__link">
+                        <!-- <i class='bx bx-user nav__icon' ></i> -->
+                        <!-- <i class='bx bx-dollar' ></i> -->
+                        <i class='bx bxs-dollar-circle'></i>
+                        <span class="nav__name">Payments</span>
+                        <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i>
+                    </a>
+
+                    <div class="nav__dropdown-collapse">
+                        <div class="nav__dropdown-content">
+                            <a href="#" class="nav__dropdown-item">CashPayments</a>
+                            <a href="#" class="nav__dropdown-item">CardPayments</a>
+                            <a href="#" class="nav__dropdown-item">MobileTransfers</a>
+                            <a href="#" class="nav__dropdown-item">VoucherPayments</a>
+                            <a href="#" class="nav__dropdown-item">R.Notepayments</a>
+                            <a href="#" class="nav__dropdown-item">LoyaltyPoints</a>
+                            <!-- <a href="#" class="nav__dropdown-item">Accounts</a> -->
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <!-- *************************************************************************************************88 -->
+
+
+
+
+
+
+
+
+
+
+
+                <div class="nav__items">
+                    <h3 class="nav__subtitle">Settings</h3>
+
+                    <div class="nav__dropdown">
+                        <a href="#" class="nav__link">
+                            <!-- <i class='bx bx-bell nav__icon' ></i> -->
+                            <!-- <i class='bx bx-shield-alt-2' ></i> -->
+                            <i class='bx bxs-shield-alt-2'></i>
+                            <span class="nav__name">Permissions</span>
+                            <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i>
+                        </a>
+
+                        <div class="nav__dropdown-collapse">
+                            <div class="nav__dropdown-content">
+                                <a href="#" class="nav__dropdown-item">User Roll</a>
+                                <a href="#" class="nav__dropdown-item">Permission</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="nav__dropdown">
+                        <a href="#" class="nav__link">
+                            <!-- <i class='bx bx-bell nav__icon' ></i> -->
+                            <!-- <i class='bx bx-shield-alt-2' ></i> -->
+                            <i class='bx bx-slider-alt'></i>
+                            <span class="nav__name">Model</span>
+                            <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i>
+                        </a>
+
+                        <div class="nav__dropdown-collapse">
+                            <div class="nav__dropdown-content">
+                                <a href="#" class="nav__dropdown-item">Catagory</a>
+                                <a href="#" class="nav__dropdown-item">Unit</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- <a href="#" class="nav__link">
+                                <i class='bx bx-compass nav__icon' ></i>
+                                <span class="nav__name">Explore</span>
+                            </a>
+                            <a href="#" class="nav__link">
+                                <i class='bx bx-bookmark nav__icon' ></i>
+                                <span class="nav__name">Saved</span>
+                            </a> -->
+                </div>
+
+
+                <!-- **********************************************************************************************************8 -->
+            </div>
+        </div>
+
+        <a href="#" class="nav__link nav__logout">
+            <i class='bx bx-log-out nav__icon'></i>
+            <span class="nav__name">Log Out</span>
+        </a>
+    </nav>
+</div>
+
+
+<!--========== CONTENTS ==========-->
+<div class="main-content-div">
+<main class="main-content">
+
+    <!-- <section style="background-color: aqua;">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt vel illum fuga unde cum, voluptates magni molestias eveniet culpa autem ut, totam veniam, suscipit tempore ullam pariatur est at asperiores?</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt vel illum fuga unde cum, voluptates magni molestias eveniet culpa autem ut, totam veniam, suscipit tempore ullam pariatur est at asperiores?</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt vel illum fuga unde cum, voluptates magni molestias eveniet culpa autem ut, totam veniam, suscipit tempore ullam pariatur est at asperiores?</p>
+    </section>
+    <section style="background-color:blue;">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt vel illum fuga unde cum, voluptates magni molestias eveniet culpa autem ut, totam veniam, suscipit tempore ullam pariatur est at asperiores?</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt vel illum fuga unde cum, voluptates magni molestias eveniet culpa autem ut, totam veniam, suscipit tempore ullam pariatur est at asperiores?</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt vel illum fuga unde cum, voluptates magni molestias eveniet culpa autem ut, totam veniam, suscipit tempore ullam pariatur est at asperiores?</p>
+    </section> -->
+
+    <router-outlet></router-outlet>
+    
+</main>
+</div>
+
+<!--========== DASHBOARD JS ==========-->
+<!-- <script src="adminDashboard.js"></script> -->
+
