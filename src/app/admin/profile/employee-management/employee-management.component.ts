@@ -12,7 +12,6 @@ export class EmployeeManagementComponent implements OnInit {
 
 
   public isHiddenAddEmployeeContainer: boolean = false;
-  // public employee: Employee = {} as Employee;
 
   public empLastEmployeeId: String | undefined="000";
 

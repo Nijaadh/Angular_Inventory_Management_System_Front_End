@@ -125,10 +125,10 @@
 
 
 <div class="employee-management-container">
-    <h3>Company Mnagement</h3>
+    <h3>Item Mnagement</h3>
 
     <button class="group cursor-pointer outline-none hover:rotate-90 duration-300 " title="Add New"
-        (click)="showANDhideAddComapnyContainer()">
+        (click)="showANDhideAddItemContainer()">
         <svg class="stroke-purple-500 fill-none group-hover:fill-white-800 group-active:stroke-teal-200 group-active:fill-teal-600 group-active:duration-0 duration-300"
             viewBox="0 0 24 24" height="30px" width="30px" xmlns="http://www.w3.org/2000/svg">
             <path stroke-width="1.5"
@@ -140,13 +140,13 @@
 
     <div class="main-container">
 
-        <div class="employee-Registration-container" [hidden]="isHiddenAddCompanyContainer">
+        <div class="employee-Registration-container" [hidden]="isHiddenAddItemContainer">
 
-            <h4 style="text-align: center; margin-bottom: 8px;">Company Registration</h4>
+            <h4 style="text-align: center; margin-bottom: 8px;">Item Registration</h4>
 
             <div class="emp-id-container">
                 <span id="lbl-emp-idLabel">ID :</span>
-                <span id="lbl-emp-id">{{"COM-001"}}</span>
+                <span id="lbl-emp-id">{{"ITM-001"}}</span>
             </div>
 
             <div class="add-company-container">
@@ -155,19 +155,40 @@
 
                     <div class="inner-container left-container" >
 
-                        <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">Name</label>
+                        <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">Item Name</label>
                         <input type="text" name="first-name" id="first-name" autocomplete="given-name"
                             class=" ins block w-full rounded-md border-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
 
-                        <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">Hotline</label>
+
+                            <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">Catagory</label>
+                            <select class=" ins block w-full rounded-md border-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                <option>Facewash</option>
+                                <option>Scrub</option>
+                                <option>Clenser</option>
+                            </select>
+
+
+                        <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">Discription</label>
                         <input type="text" name="first-name" id="first-name" autocomplete="given-name"
                             class=" ins block w-full rounded-md border-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
 
-                        <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">Gmail</label>
+                        <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">Quantity</label>
                         <input type="text" name="first-name" id="first-name" autocomplete="given-name"
                             class=" ins block w-full rounded-md border-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
 
-                            <div class="col-span-full">
+                            <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">Price</label>
+                            <input type="text" name="first-name" id="first-name" autocomplete="given-name"
+                                class=" ins block w-full rounded-md border-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+    
+                                
+
+
+                                <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">Image</label>
+<input class="form-control form-control-sm rounded-md border-3 focus:ring-indigo-600" id="formFileSm" type="file" />
+<!-- <label for="formFileLg" class="form-label">Large file input example</label>
+<input class="form-control form-control-lg" id="formFileLg" type="file" /> -->
+
+                            <!-- <div class="col-span-full">
                         
                                 <label for="emp-adress"
                                     class="block text-sm font-medium leading-6 text-gray-900">Address</label>
@@ -177,7 +198,12 @@
                                         style="height: 98px;"></textarea>
                                 </div>
         
-                            </div>
+                            </div> -->
+
+
+                            
+
+
 
 
                             <div class="button-group" style=" display: flex; align-items: end; justify-content: left; margin: 40px;">
@@ -191,7 +217,7 @@
 
 
                     <div class="inner-container right-container" >
-                        <app-company-detail-card></app-company-detail-card>
+                        <!-- <app-company-detail-card></app-company-detail-card> -->
                     </div>
 
 
@@ -209,29 +235,42 @@
             <thead class="table-dark " style="border-radius: 10px;">
                 <tr>
                     <th scope="col">No</th>
-                    <th scope="col">Employee ID</th>
-                    <th scope="col">Last Name</th>
-                    <th scope="col">Role</th>
+                    <th scope="col">Item ID</th>
+                    <th scope="col">Item Name</th>
+                    <th scope="col">Catagory</th>
+                    <th scope="col">AV/status</th>
                     <th scope="col">Status</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
 
             <tbody>
-                <tr *ngFor="let com of company; let i = index">
+                <tr *ngFor="let itm of items    ; let i = index">
                     <th scope="row">{{i+1}}</th>
-                    <td>{{com.cusId}}</td>
-                    <td>{{com.cusLName}}</td>
-                    <td>{{com.cusRoleId}}</td>
+                    <td>{{itm.itemId}}</td>
+                    <td>{{itm.itemComName}}</td>
+                    <td>{{itm.itemName}}</td>
                     <td>
                         <button type="button"
-                            [ngClass]="{'btn-success': com.cusCommonStatus === 'ACTIVE','btn-danger': com.cusCommonStatus === 'INACTIVE'}"
-                            [style.border-]="com.cusCommonStatus === 'ACTIVE' ? 'green' : 'red'"
-                            [style.border-color]="com.cusCommonStatus === 'ACTIVE' ? 'green' : 'red'"
-                            [style.background-color]="com.cusCommonStatus === 'ACTIVE' ? '#d9f7e7' : '#ffcccc'"
-                            [style.color]="com.cusCommonStatus === 'ACTIVE' ? 'green' : 'red'"
+                            [ngClass]="{'btn-success': itm.itemComStatus === 'ACTIVE','btn-danger': itm.itemComStatus === 'INACTIVE'}"
+                            [style.border-]="itm.itemComStatus === 'ACTIVE' ? 'green' : 'red'"
+                            [style.border-color]="itm.itemComStatus === 'ACTIVE' ? 'green' : 'red'"
+                            [style.background-color]="itm.itemComStatus === 'ACTIVE' ? '#d9f7e7' : '#ffcccc'"
+                            [style.color]="itm.itemComStatus === 'ACTIVE' ? 'green' : 'red'"
                             style="padding: 0.0rem 0.7rem; font-size: 0.75rem;border-radius: 0.3rem;border-style: solid;border-width: 1px;">
-                            {{com.cusCommonStatus === 'ACTIVE' ? 'Active' : 'Inactive'}}
+                            {{itm.itemComStatus === 'ACTIVE' ? 'Available' : 'NotAvailable'}}
+                        </button>
+                    </td>
+
+                    <td>
+                        <button type="button"
+                            [ngClass]="{'btn-success': itm.itemComStatus === 'ACTIVE','btn-danger': itm.itemComStatus === 'INACTIVE'}"
+                            [style.border-]="itm.itemComStatus === 'ACTIVE' ? 'green' : 'red'"
+                            [style.border-color]="itm.itemComStatus === 'ACTIVE' ? 'green' : 'red'"
+                            [style.background-color]="itm.itemComStatus === 'ACTIVE' ? '#d9f7e7' : '#ffcccc'"
+                            [style.color]="itm.itemComStatus === 'ACTIVE' ? 'green' : 'red'"
+                            style="padding: 0.0rem 0.7rem; font-size: 0.75rem;border-radius: 0.3rem;border-style: solid;border-width: 1px;">
+                            {{itm.itemComStatus === 'ACTIVE' ? 'Active' : 'Inactive'}}
                         </button>
                     </td>
 
@@ -251,8 +290,11 @@
                     <td>Jacob</td>
                     <td>Thornton</td>
                     <td> <button type="button" class="btn btn-danger"
-                            style="border-color: green; background-color: #d9f7e7; color: green; padding: 0.0rem 0.7rem; font-size: 0.75rem;">Active</button>
+                            style="border-color: green; background-color: #d9f7e7; color: green; padding: 0.0rem 0.7rem; font-size: 0.75rem;">Available</button>
                     </td>
+                    <td> <button type="button" class="btn btn-danger"
+                        style="border-color: green; background-color: #d9f7e7; color: green; padding: 0.0rem 0.7rem; font-size: 0.75rem;">Active</button>
+                </td>
                     <td width="200em">
                         <button type="button" class="btn btn-primary"
                             style="padding: 0.25rem 0.5rem; font-size: 0.75rem; margin: 0rem 0.2rem;">View</button>
@@ -269,8 +311,11 @@
                     <td>Larry the Bird</td>
                     <td>twitter</td>
                     <td><button type="button" class="btn btn-danger"
-                            style="border-color: red; background-color: #ffcccc; color: red; padding: 0.0rem 0.7rem; font-size: 0.75rem;">Inactive</button>
+                            style="border-color: red; background-color: #ffcccc; color: red; padding: 0.0rem 0.7rem; font-size: 0.75rem;">NotAvailble</button>
                     </td>
+                    <td> <button type="button" class="btn btn-danger"
+                        style="border-color: green; background-color: #d9f7e7; color: green; padding: 0.0rem 0.7rem; font-size: 0.75rem;">Active</button>
+                </td>
                     <td width="200em">
                         <button type="button" class="btn btn-primary"
                             style="padding: 0.25rem 0.5rem; font-size: 0.75rem; margin: 0rem 0.2rem;">View</button>

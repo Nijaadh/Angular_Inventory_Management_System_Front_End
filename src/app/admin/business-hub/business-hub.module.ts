@@ -9,6 +9,9 @@ import { AgencyManagementComponent } from './agency-management/agency-management
 import { SaleseRepManagementComponent } from './salese-rep-management/salese-rep-management.component';
 import { ProductManagementComponent } from './product-management/product-management.component';
 import { PriceManagementComponent } from './price-management/price-management.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { CompanyDetailCardComponent } from './company-management/Components/company-detail-card/company-detail-card.component';
 
 
 @NgModule({
@@ -19,11 +22,15 @@ import { PriceManagementComponent } from './price-management/price-management.co
     AgencyManagementComponent,
     SaleseRepManagementComponent,
     ProductManagementComponent,
-    PriceManagementComponent
+    PriceManagementComponent,
+    CompanyDetailCardComponent
   ],
   imports: [
     CommonModule,
-    BusinessHubRoutingModule
-  ]
+    BusinessHubRoutingModule,
+    FormsModule,
+    HttpClientModule
+  ],
+  
 })
 export class BusinessHubModule { }

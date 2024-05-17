@@ -1,0 +1,93 @@
+// .card {
+//     margin-left: auto;
+//     margin-right: auto;
+//     display: flex;
+//     flex-wrap: wrap;
+//     align-items: stretch;
+//     margin-bottom: 2rem;
+//     width: calc(100% - 2rem); /* Adjust the width to your preference */
+//     max-width: 25rem; /* Set a maximum width */
+//     border-radius: 0.25rem;
+//     background-color: rgba(17, 24, 39, 1);
+//     padding: 1.5rem;
+//     border-radius: 10px;
+//   }
+  
+//   .header {
+//     display: flex;
+//     flex-direction: column;
+//   }
+  
+//   .title {
+//     font-size: 1.5rem;
+//     line-height: 2rem;
+//     font-weight: 700;
+//     color: #fff
+//   }
+  
+//   .price {
+//     font-size: 3.75rem;
+//     line-height: 1;
+//     font-weight: 700;
+//     color: #fff
+//   }
+  
+//   .desc {
+//     margin-top: 0.75rem;
+//     margin-bottom: 0.75rem;
+//     line-height: 1.625;
+//     color: rgba(156, 163, 175, 1);
+//   }
+  
+//   .lists {
+//     margin-bottom: 1.5rem;
+//     flex: 1 1 0%;
+//     color: rgba(156, 163, 175, 1);
+//   }
+  
+//   .lists .list {
+//     margin-bottom: 0.5rem;
+//     display: flex;
+//     margin-left: 0.5rem
+//   }
+  
+//   .lists .list svg {
+//     height: 1.5rem;
+//     width: 1.5rem;
+//     flex-shrink: 0;
+//     margin-right: 0.5rem;
+//     color: rgba(167, 139, 250, 1);
+//   }
+  
+//   .action {
+//     border: none;
+//     outline: none;
+//     display: inline-block;
+//     border-radius: 0.25rem;
+//     background-color: rgba(167, 139, 250, 1);
+//     padding: 0.75rem 1.25rem; /* Adjust padding for better responsiveness */
+//     text-align: center;
+//     font-weight: 600;
+//     letter-spacing: 0.05em;
+//   }
+  
+//   /* Media queries for responsiveness */
+//   @media screen and (max-width: 768px) {
+//     .card {
+//       max-width: 100%; /* Adjust the maximum width for smaller screens */
+//     }
+//   }
+  
+
+
+.outer {
+	// min-height: 100vh;
+	display: flex;
+	// font-family: Inter;
+	align-items: center;
+	justify-content: center;
+	// background: #e8e8e8;
+	// gap: 16px;
+    margin-left:auto;
+    margin-right: auto;
+}

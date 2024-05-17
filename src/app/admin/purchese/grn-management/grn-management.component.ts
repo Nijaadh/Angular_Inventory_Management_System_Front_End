@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { Item } from './Models/item.model';
+import { Grn } from './Models/grn.model';
 
 @Component({
-  selector: 'app-product-management',
-  templateUrl: './product-management.component.html',
-  styleUrl: './product-management.component.scss'
+  selector: 'app-grn-management',
+  templateUrl: './grn-management.component.html',
+  styleUrl: './grn-management.component.scss'
 })
-export class ProductManagementComponent implements OnInit{
-
-  items:Item[]=[];
+export class GrnManagementComponent implements OnInit{
+  
+  grns:Grn[]=[];
+  items:any;
   public isHiddenAddItemContainer: boolean = false;
   constructor(){
 
@@ -39,5 +40,4 @@ export class ProductManagementComponent implements OnInit{
 
 
   }
-
 }
