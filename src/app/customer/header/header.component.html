@@ -1,0 +1,21 @@
+<div class="bdy">
+<header>
+    <h1>eMaster</h1>
+    <nav>
+      <div class="menu-toggle" id="menu-toggle">
+        <!-- <i class="fas fa-bars" (click)="toggleMenu()"></i> -->
+        <!-- <button value="ok"  (click)="toggleMenu()">snd</button> -->
+        <i class="fa fa-bars" aria-hidden="true" (click)="toggleMenu()"></i>
+      </div>
+      <ul class="nav-links" [class.active]="menuActive" id="nav-links">
+        <li><a routerLink="/"><i class="fas fa-home"></i> Home</a></li>
+        <li><a routerLink="/shop"><i class="fas fa-store"></i> Shop</a></li>
+        <li><a routerLink="/why-us"><i class="fas fa-question-circle"></i> Why Us</a></li>
+        <li><a routerLink="/testimonials"><i class="fas fa-comment-dots"></i> Testimonial</a></li>
+        <li><a routerLink="/contact"><i class="fas fa-phone-alt"></i> Contact Us</a></li>
+        <li><a routerLink="/login"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+        <li><a routerLink="/cart"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+      </ul>
+    </nav>
+  </header>
+</div>

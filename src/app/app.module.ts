@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AdminModule } from './admin/admin.module';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { CustomerModule } from './customer/customer.module';
 
 
 
@@ -16,6 +17,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     BrowserModule,
     AppRoutingModule,
     AdminModule,
+    CustomerModule,
   ],
   providers: [
     provideAnimationsAsync()

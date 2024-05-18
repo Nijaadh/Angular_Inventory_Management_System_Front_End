@@ -1,0 +1,91 @@
+footer {
+    background: linear-gradient(135deg, #ff6ec4, #7873f5); /* Pink to Indigo gradient */
+  padding: 20px;
+  color: white;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  align-items: start;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #ff6ec4, #7873f5);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.footer-content h4 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+}
+
+.footer-content p {
+  margin: 0;
+  font-size: 14px;
+  color: white;
+}
+
+.footer-content div {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.newsletter form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.newsletter input[type="email"] {
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+}
+
+.newsletter button {
+  padding: 8px;
+  background-color: #ff4081;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.newsletter button:hover {
+  background-color: #ff79a3;
+}
+
+.social-media {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-media a {
+  color: white;
+}
+
+.social-media i {
+  font-size: 20px;
+}
+
+.social-media a:hover {
+  color: #ff4081;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-content div {
+    text-align: center;
+  }
+}
