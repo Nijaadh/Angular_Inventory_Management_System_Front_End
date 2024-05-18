@@ -149,17 +149,19 @@
                 <span id="lbl-emp-id">{{"GRN-001"}}</span>
 
                 <span id="lbl-com-label">Company:</span>
-                
+
                 <span>
                     <!-- <label for="first-name" class=" text-sm font-medium leading-6 text-gray-900">Company</label> -->
-                <select class=" ins block w-full rounded-md border-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" style="max-width: 43vw; width: 25VW;">
-                    <option>Natures secret</option>
-                    <option>4 ever</option>
-                    <option>Janet</option>
-                </select>
-                
+                    <select
+                        class=" ins block w-full rounded-md border-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                        style="max-width: 43vw; width: 25VW;">
+                        <option>Natures secret</option>
+                        <option>4 ever</option>
+                        <option>Janet</option>
+                    </select>
+
                 </span>
-                
+
 
             </div>
 
@@ -167,32 +169,34 @@
 
                 <div class="inner-container-cover">
 
-                    <div class="inner-container left-container" >
+                    <div class="inner-container left-container">
 
 
                         <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">Item</label>
-                        <select class=" ins block w-full rounded-md border-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                        <select
+                            class=" ins block w-full rounded-md border-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                             <option></option>
                             <option>NS carrot f/w 100ml</option>
                             <option>NS strawberry f/w 100ml</option>
                         </select>
 
-                        <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">Quantity</label>
+                        <label for="first-name"
+                            class="block text-sm font-medium leading-6 text-gray-900">Quantity</label>
                         <input type="text" name="first-name" id="first-name" autocomplete="given-name"
                             class=" ins block w-full rounded-md border-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
 
 
-                            
 
 
-                        
-                                
 
 
-<!-- <label for="formFileLg" class="form-label">Large file input example</label>
+
+
+
+                        <!-- <label for="formFileLg" class="form-label">Large file input example</label>
 <input class="form-control form-control-lg" id="formFileLg" type="file" /> -->
 
-                            <!-- <div class="col-span-full">
+                        <!-- <div class="col-span-full">
                         
                                 <label for="emp-adress"
                                     class="block text-sm font-medium leading-6 text-gray-900">Address</label>
@@ -205,90 +209,94 @@
                             </div> -->
 
 
-                            
 
 
 
 
-                            <div class="button-group" style=" display: flex; align-items: end; justify-content: left; margin: 40px;">
-                                <button type="button" class="btn btn-success"
-                                    style="width: 100px; margin-top: 0px; margin-right: 10px;">Add</button>
-                                <button type="button" class="btn btn-danger"
-                                    style="width: 100px; margin-top: 0px; margin-left: 10px;">clear</button>
-                            </div>
+
+                        <div class="button-group"
+                            style=" display: flex; align-items: end; justify-content: left; margin: 40px;">
+                            <button type="button" class="btn btn-success"
+                                style="width: 100px; margin-top: 0px; margin-right: 10px;">Add</button>
+                            <button type="button" class="btn btn-danger"
+                                style="width: 100px; margin-top: 0px; margin-left: 10px;">clear</button>
+                        </div>
 
                     </div>
 
 
-                    <div class="inner-container right-container" >
+                    <div class="inner-container right-container">
                         <!-- <app-company-detail-card></app-company-detail-card> -->
 
 
 
 
                         <table class="table table-striped table-hover rounded-lg"
-            style=" margin-left: auto;margin-right: auto; border-radius: 10px;">
+                            style=" margin-left: auto;margin-right: auto; border-radius: 10px;" id="item-cart">
 
-            <thead class="table-dark " style="border-radius: 10px;">
-                <tr>
-                    <th scope="col">No</th>
-                    <th scope="col">Item ID</th>
-                    <th scope="col">Item Name</th>
-                    <th scope="col">Catagery</th>
-                    <th scope="col">Quantity</th>
-                    <th scope="col">Action</th>
-                </tr>
-            </thead>
+                            <thead class="table-dark " style="border-radius: 10px;">
+                                <tr>
+                                    <th scope="col">No</th>
+                                    <th scope="col">Item ID</th>
+                                    <th scope="col">Item Name</th>
+                                    <th scope="col">Catagery</th>
+                                    <th scope="col">Quantity</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
 
-            <tbody>
-                <tr *ngFor="let itm of items    ; let i = index">
-                    <th scope="row">{{i+1}}</th>
-                    <td>{{itm.itemId}}</td>
-                    <td>{{itm.itemComName}}</td>
-                    <td>{{itm.itemName}}</td>
-                    <td>{{"4"}}</td>
-                    <td width="200em">
-
-                       
-                        <button type="button" class="btn btn-secondary"
-                            style="padding: 0.25rem 0.5rem; font-size: 0.75rem; margin: 0rem 0.2rem;">Update Qty</button>
-                        <button type="button" class="btn btn-danger"
-                            style="padding: 0.25rem 0.5rem; font-size: 0.75rem; margin: 0rem 0.2rem;">Remove</button>
-                    </td>
-                </tr>
+                            <tbody>
+                                <tr *ngFor="let itm of items    ; let i = index">
+                                    <th scope="row">{{i+1}}</th>
+                                    <td>{{itm.itemId}}</td>
+                                    <td>{{itm.itemComName}}</td>
+                                    <td>{{itm.itemName}}</td>
+                                    <td>{{"4"}}</td>
+                                    <td width="200em">
 
 
-                <tr>
-                    <th scope="row">2</th>
-                    <td>EMP-002</td>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>3</td>
-                    <td width="200em">
-                        
-                        <button type="button" class="btn btn-secondary"
-                            style="padding: 0.25rem 0.5rem; font-size: 0.75rem; margin: 0rem 0.2rem;">Update Qty</button>
-                        <button type="button" class="btn btn-danger"
-                            style="padding: 0.25rem 0.5rem; font-size: 0.75rem; margin: 0rem 0.2rem;">Remove</button>
+                                        <button type="button" class="btn btn-secondary"
+                                            style="padding: 0.25rem 0.5rem; font-size: 0.75rem; margin: 0rem 0.2rem;">Update
+                                            Qty</button>
+                                        <button type="button" class="btn btn-danger"
+                                            style="padding: 0.25rem 0.5rem; font-size: 0.75rem; margin: 0rem 0.2rem;">Remove</button>
+                                    </td>
+                                </tr>
 
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>EMP-003</td>
-                    <td>Larry the Bird</td>
-                    <td>twitter</td>
-                    <td>7</td>
-                    <td width="200em">
-                        
-                        <button type="button" class="btn btn-secondary"
-                            style="padding: 0.25rem 0.5rem; font-size: 0.75rem; margin: 0rem 0.2rem;">Update Qty</button>
-                        <button type="button" class="btn btn-danger"
-                            style="padding: 0.25rem 0.5rem; font-size: 0.75rem; margin: 0rem 0.2rem;">Remove</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>EMP-002</td>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>3</td>
+                                    <td width="200em">
+
+                                        <button type="button" class="btn btn-secondary"
+                                            style="padding: 0.25rem 0.5rem; font-size: 0.75rem; margin: 0rem 0.2rem;">Update
+                                            Qty</button>
+                                        <button type="button" class="btn btn-danger"
+                                            style="padding: 0.25rem 0.5rem; font-size: 0.75rem; margin: 0rem 0.2rem;">Remove</button>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>EMP-003</td>
+                                    <td>Larry the Bird</td>
+                                    <td>twitter</td>
+                                    <td>7</td>
+                                    <td width="200em">
+
+                                        <button type="button" class="btn btn-secondary"
+                                            style="padding: 0.25rem 0.5rem; font-size: 0.75rem; margin: 0rem 0.2rem;">Update
+                                            Qty</button>
+                                        <button type="button" class="btn btn-danger"
+                                            style="padding: 0.25rem 0.5rem; font-size: 0.75rem; margin: 0rem 0.2rem;">Remove</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
 
 
 
@@ -309,7 +317,7 @@
 
             </div>
 
-            
+
             <div class="button-group" style=" display: flex; align-items: end; justify-content: center; margin: 40px;">
                 <button type="button" class="btn btn-primary"
                     style="width: 100px; margin-top: 0px; margin-right: 10px;">Conform</button>
@@ -320,15 +328,15 @@
         </div>
 
         <table class="table table-striped table-hover rounded-lg"
-            style="width: 90vw; margin-left: auto;margin-right: auto; border-radius: 10px;">
+            style="width: 90vw; margin-left: auto;margin-right: auto; border-radius: 10px;" id="item-cart">
 
             <thead class="table-dark " style="border-radius: 10px;">
                 <tr>
                     <th scope="col">No</th>
-                    <th scope="col">Item ID</th>
-                    <th scope="col">Item Name</th>
-                    <th scope="col">Catagory</th>
-                    <th scope="col">AV/status</th>
+                    <th scope="col">GRN NO</th>
+                    <th scope="col">Company</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Recived</th>
                     <th scope="col">Status</th>
                     <th scope="col">Action</th>
                 </tr>
@@ -341,15 +349,7 @@
                     <td>{{itm.itemComName}}</td>
                     <td>{{itm.itemName}}</td>
                     <td>
-                        <button type="button"
-                            [ngClass]="{'btn-success': itm.itemComStatus === 'ACTIVE','btn-danger': itm.itemComStatus === 'INACTIVE'}"
-                            [style.border-]="itm.itemComStatus === 'ACTIVE' ? 'green' : 'red'"
-                            [style.border-color]="itm.itemComStatus === 'ACTIVE' ? 'green' : 'red'"
-                            [style.background-color]="itm.itemComStatus === 'ACTIVE' ? '#d9f7e7' : '#ffcccc'"
-                            [style.color]="itm.itemComStatus === 'ACTIVE' ? 'green' : 'red'"
-                            style="padding: 0.0rem 0.7rem; font-size: 0.75rem;border-radius: 0.3rem;border-style: solid;border-width: 1px;">
-                            {{itm.itemComStatus === 'ACTIVE' ? 'Available' : 'NotAvailable'}}
-                        </button>
+                        Jacob
                     </td>
 
                     <td>
@@ -379,12 +379,11 @@
                     <td>EMP-002</td>
                     <td>Jacob</td>
                     <td>Thornton</td>
-                    <td> <button type="button" class="btn btn-danger"
-                            style="border-color: green; background-color: #d9f7e7; color: green; padding: 0.0rem 0.7rem; font-size: 0.75rem;">Available</button>
+                    <td> Murali
                     </td>
                     <td> <button type="button" class="btn btn-danger"
-                        style="border-color: green; background-color: #d9f7e7; color: green; padding: 0.0rem 0.7rem; font-size: 0.75rem;">Active</button>
-                </td>
+                            style="border-color: green; background-color: #d9f7e7; color: green; padding: 0.0rem 0.7rem; font-size: 0.75rem;">Active</button>
+                    </td>
                     <td width="200em">
                         <button type="button" class="btn btn-primary"
                             style="padding: 0.25rem 0.5rem; font-size: 0.75rem; margin: 0rem 0.2rem;">View</button>
@@ -400,12 +399,11 @@
                     <td>EMP-003</td>
                     <td>Larry the Bird</td>
                     <td>twitter</td>
-                    <td><button type="button" class="btn btn-danger"
-                            style="border-color: red; background-color: #ffcccc; color: red; padding: 0.0rem 0.7rem; font-size: 0.75rem;">NotAvailble</button>
+                    <td>Pala
                     </td>
                     <td> <button type="button" class="btn btn-danger"
-                        style="border-color: green; background-color: #d9f7e7; color: green; padding: 0.0rem 0.7rem; font-size: 0.75rem;">Active</button>
-                </td>
+                            style="border-color: green; background-color: #d9f7e7; color: green; padding: 0.0rem 0.7rem; font-size: 0.75rem;">Active</button>
+                    </td>
                     <td width="200em">
                         <button type="button" class="btn btn-primary"
                             style="padding: 0.25rem 0.5rem; font-size: 0.75rem; margin: 0rem 0.2rem;">View</button>

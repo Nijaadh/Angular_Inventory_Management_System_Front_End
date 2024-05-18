@@ -3,15 +3,19 @@ import { CommonModule } from '@angular/common';
 
 import { SaleseRoutingModule } from './salese-routing.module';
 import { SaleseComponent } from './salese.component';
+import { InvoiceComponent } from './invoice/invoice.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
-    SaleseComponent
+    SaleseComponent,
+    InvoiceComponent
   ],
   imports: [
     CommonModule,
-    SaleseRoutingModule
+    SaleseRoutingModule,
+    FormsModule
   ]
 })
 export class SaleseModule { }

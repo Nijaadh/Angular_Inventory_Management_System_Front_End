@@ -10,6 +10,7 @@ import { AgencyManagementComponent } from './business-hub/agency-management/agen
 import { SaleseRepManagementComponent } from './business-hub/salese-rep-management/salese-rep-management.component';
 import { PurcheseComponent } from './purchese/purchese.component';
 import { GrnManagementComponent } from './purchese/grn-management/grn-management.component';
+import { InvoiceComponent } from './salese/invoice/invoice.component';
 
 
 const routes: Routes = [
@@ -29,7 +30,13 @@ const routes: Routes = [
     {path:"purches",component:PurcheseComponent,children:[
       {path:"grnmanagement",component:GrnManagementComponent},
      
+    ]},
+
+    {path:"sales",component:PurcheseComponent,children:[
+        {path:"invoice",component:InvoiceComponent},
+       
     ]}
+   
   ]}
 ];
 
