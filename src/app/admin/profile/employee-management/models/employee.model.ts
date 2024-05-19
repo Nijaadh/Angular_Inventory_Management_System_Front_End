@@ -12,9 +12,12 @@ empEMGContactNo:String | undefined;
 empAddress:String | undefined;
 empUserName:String | undefined;
 empPassword:String | undefined;
+empConPassword:String | undefined;
+empImage:String | undefined;
+// empImageFile:File | undefined;
 empCommonStatus:String | undefined;
 empRoleId:String | undefined;
-empRegDate:String | undefined;
-empUpdDate:String | undefined;
+
+
 
 }

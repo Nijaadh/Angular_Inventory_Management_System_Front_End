@@ -20,7 +20,7 @@
 
             <div class="emp-id-container">
                 <span id="lbl-emp-idLabel">ID :</span>
-                <span id="lbl-emp-id">{{new}}</span>
+                <!-- <span id="lbl-emp-id">{{new}}</span> -->
             </div>
 
             <div class="add-employee-container">
@@ -30,21 +30,21 @@
 
 
                     <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">First name</label>
-                    <input type="text" name="first-name" id="first-name" autocomplete="given-name" [(ngModel)]="empFName"
+                    <input type="text" name="first-name" id="first-name" autocomplete="given-name" [(ngModel)]="employee.empFName"  
                         class=" ins block w-full rounded-md border-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
 
                     <label for="emp-nic" class="block text-sm font-medium leading-6 text-gray-900">NIC</label>
-                    <input type="text" name="emp-nic" id="emp-nic" autocomplete="given-name" [(ngModel)]="empNic"
+                    <input type="text" name="emp-nic" id="emp-nic" autocomplete="given-name"  [(ngModel)]="employee.empNic"
                         class=" ins block w-full rounded-md border-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
 
                     <label for="emp-gmail" class="block text-sm font-medium leading-6 text-gray-900">G Mail</label>
-                    <input type="text" name="emp-gmail" id="emp-gmail" autocomplete="given-name" [(ngModel)]="empGmail"
+                    <input type="text" name="emp-gmail" id="emp-gmail" autocomplete="given-name" [(ngModel)]="employee.empGmail"
                         class=" ins block w-full rounded-md border-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
 
 
                     <label for="emp-contactNo" class="block text-sm font-medium leading-6 text-gray-900">Contact
                         No</label>
-                    <input type="text" name="contact-no" id="contact-no" autocomplete="given-name" [(ngModel)]="empContactNo"
+                    <input type="text" name="contact-no" id="contact-no" autocomplete="given-name" [(ngModel)]="employee.empContactNo"
                         class=" ins block w-full rounded-md border-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
 
                     <div class="col-span-full">
@@ -52,7 +52,7 @@
                         <label for="emp-adress"
                             class="block text-sm font-medium leading-6 text-gray-900">Address</label>
                         <div class="mt-2">
-                            <textarea id="emp-address" name="emp-addres" rows="3" [(ngModel)]="empAddress"
+                            <textarea id="emp-address" name="emp-addres" rows="3" [(ngModel)]="employee.empAddress"
                                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                 style="height: 98px;"></textarea>
                         </div>
@@ -60,11 +60,11 @@
                     </div>
 
                     <label for="emp-userName" class="block text-sm font-medium leading-6 text-gray-900">User Name</label>
-                    <input type="text" name="emp-userName" id="emp-userName" autocomplete="given-name" [(ngModel)]="empUserName"
+                    <input type="text" name="emp-userName" id="emp-userName" autocomplete="given-name" [(ngModel)]="employee.empUserName"
                         class=" ins block w-full rounded-md border-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
 
                     <label for="emp-password" class="block text-sm font-medium leading-6 text-gray-900">Password</label>
-                    <input type="text" name="emp-password" id="emp-password" autocomplete="given-name" [(ngModel)]="empPassword"
+                    <input type="text" name="emp-password" id="emp-password" autocomplete="given-name" [(ngModel)]="employee.empPassword"
                         class=" ins block w-full rounded-md border-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
 
 
@@ -76,7 +76,7 @@
 
 
                     <label for="last-name" class="block text-sm font-medium leading-6 text-gray-900">Last Name</label>
-                    <input type="text" name="last-name" id="last-name" autocomplete="given-name" [(ngModel)]="empLName"
+                    <input type="text" name="last-name" id="last-name" autocomplete="given-name" [(ngModel)]="employee.empLName"
                         class=" ins block w-full rounded-md border-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
 
 
@@ -88,18 +88,18 @@
 
                         <span class="gender-input" id="male-input">
                             <input class="gender-check-input" type="radio" name="gender" id="Male" value="Male"
-                                style="margin-top: 0.7em;" checked [(ngModel)]="empGender" (change)="onGenderChange('Male')">
-                            <label class="form-check-label" for="Male" style="margin-top: 0.4em; ; margin-left: 0.5em;">
+                                style="margin-top: 0.7em;" checked [(ngModel)]="employee.empGender">
+                            <label class="form-check-label" for="Male" style="margin-top: 0.0em; ; margin-left: 0.5em;">
                                 Male
                             </label>
                         </span>
 
 
                         <span class="gender-input" id="female-input">
-                            <input class="gender-check-input" type="radio" name="gender" id="female" value="female"
-                                style="margin-top: 0.7em;" [(ngModel)]="empGender" (change)="onGenderChange('Female')">
+                            <input class="gender-check-input" type="radio" name="gender" id="female" value="Female" [(ngModel)]="employee.empGender"
+                                style="margin-top: 0.7em;">
                             <label class="form-check-label" for="female"
-                                style="margin-top: 0.4em; ; margin-left: 0.5em;">
+                                style="margin-top: 0.0em; ; margin-left: 0.5em;">
                                 Female
                             </label>
                         </span>
@@ -112,41 +112,44 @@
                         DOB</label>
                     <div class="input-group date" id="datepicker">
 
-                        <input type="date" name="emp-DOB" id="emp-DOB" autocomplete="given-name" [(ngModel)]="empDOB"
+                        <input type="date" name="emp-DOB" id="emp-DOB" autocomplete="given-name"  [(ngModel)]="employee.empDOB"
                             class=" ins block w-full rounded-md border-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
 
                     </div>
 
                     <label for="emp-EMG-contactNo" class="block text-sm font-medium leading-6 text-gray-900">Emergancy
                         Contact No</label>
-                    <input type="text" name="emp-EMG-contactNo" id="emp-EMG-contactNo" autocomplete="given-name" [(ngModel)]="empEMGContactNo"
+                    <input type="text" name="emp-EMG-contactNo" id="emp-EMG-contactNo" autocomplete="given-name" [(ngModel)]="employee.empEMGContactNo"
                         class=" ins block w-full rounded-md border-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
 
 
 
-                    <div class="empty" style="height: 130px;">
+                    <!-- <div class="empty" style="height: 130px;">
 
 
 
-                    </div>
+                    </div> -->
+
+                    <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">Image</label>
+<input class="form-control form-control-sm rounded-md border-3 focus:ring-indigo-600" id="formFileSm" type="file" (change)="onImgSelect($event)"/>
 
 
                     <div class="sm:col-span-3">
                         <label for="Role" class="block text-sm font-medium leading-6 text-gray-900">Role</label>
                         <div class="mt-2">
-                            <select id="emp-role" name="emp-role" autocomplete="given-name" [(ngModel)]="empUserRole"
+                            <select id="emp-role" name="emp-role" autocomplete="given-name" [(ngModel)]="employee.empRoleId"
                                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
-                                <option>Worker</option>
-                                <option>Biller</option>
-                                <option>Admin</option>
-                                <option>Manager</option>
+                                <option value="001">Worker</option>
+                                <option value="002">Biller</option>
+                                <option vale="003">Admin</option>
+                                <option value="004">Manager</option>
                             </select>
                         </div>
                     </div>
 
                     <label for="emp-Con-Password" class="block text-sm font-medium leading-6 text-gray-900">Conform
                         Pssword</label>
-                    <input type="text" name="emp-Con-Password" id="emp-Con-Password" autocomplete="given-name" [(ngModel)]="empConformPassword"
+                    <input type="text" name="emp-Con-Password" id="emp-Con-Password" autocomplete="given-name" [(ngModel)]="employee.empConPassword"
                         class=" ins block w-full rounded-md border-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
 
 
@@ -157,7 +160,7 @@
             </div>
 
             <div class="button-group" style=" display: flex; align-items: end; justify-content: center; margin: 40px;">
-                <button type="button" class="btn btn-primary"
+                <button type="button" class="btn btn-primary" (click)="onSubmit()"
                     style="width: 100px; margin-top: 40px; margin-right: 10px;">submit</button>
                 <button type="button" class="btn btn-danger"
                     style="width: 100px; margin-top: 40px; margin-left: 10px;">clear</button>
@@ -178,7 +181,7 @@
               </tr>
             </thead>
          
-          <tbody>
+          <!-- <tbody>
             <tr *ngFor="let emp of employees; let i = index">
                 <th scope="row">{{i+1}}</th>
                 <td>{{emp.empId}}</td>
@@ -228,7 +231,7 @@
                     <button type="button" class="btn btn-danger" style="padding: 0.25rem 0.5rem; font-size: 0.75rem; margin: 0rem 0.2rem;">Delete</button>
                 </td>
               </tr>
-          </tbody>
+          </tbody> -->
         </table>
 
     </div>

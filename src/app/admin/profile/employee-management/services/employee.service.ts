@@ -8,7 +8,7 @@ import { Observable, map } from 'rxjs';
 })
 export class EmployeeService {
 
-  private baseUrl="http://localhost:8080/api/v1/employeeManagement/getAllEmployees"
+  private baseUrl="http://localhost:8080/api/v1/employeeManagement/saveEmployee"
   constructor(private httpClient: HttpClient) {
 
    }
@@ -16,6 +16,22 @@ export class EmployeeService {
 //  getEmployeeList(): Observable<Employee[]>{
 //   return this.httpClient.get<Employee[]>(`${this.baseUrl}`);
 //  }
+
+
+saveEmp(payload: any, imgFile:any): Observable<any> {
+  console.log('payload:', payload);
+  const formData = new FormData();
+  formData.append('body',payload)
+  formData.append('img',imgFile)
+  
+
+  return this.httpClient.post<any>(this.baseUrl,formData);
+  // return new Observable<any>((observer) => {
+    
+  // });
+}
+
+
 
 getEmployeeList(): Observable<Employee[]> {
   return this.httpClient.get<any>(this.baseUrl).pipe(
@@ -44,5 +60,10 @@ getEmployeeList(): Observable<Employee[]> {
     })
   );
 }
+
+
+// *************************------------SAVE-EMPLOYEE----**************************
+
+
 
 }
