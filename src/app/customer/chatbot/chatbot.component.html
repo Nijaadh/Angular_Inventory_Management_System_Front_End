@@ -1,0 +1,27 @@
+<div class="chat-icon" (click)="toggleChat()">
+    <i class="fas fa-comments"></i>
+  </div>
+  
+  <div class="chat-container" [class.active]="chatActive">
+    <div class="chat-header">
+      <h3>Chat Bot</h3>
+      <button class="close-btn" (click)="toggleChat()">&times;</button>
+    </div>
+    <div class="chat-box">
+      <div class="message" *ngFor="let message of messages">
+        <div class="user-message" *ngIf="message.user">
+          <i class="fas fa-user"></i>
+          {{ message.text }}
+        </div>
+        <div class="bot-message" *ngIf="!message.user">
+          <i class="fas fa-robot"></i>
+          {{ message.text }}
+        </div>
+      </div>
+    </div>
+    <div class="input-box">
+      <input [(ngModel)]="userInput" (keydown.enter)="sendMessage()" placeholder="Type your message..." />
+      <button (click)="sendMessage()">Send</button>
+    </div>
+  </div>
+  

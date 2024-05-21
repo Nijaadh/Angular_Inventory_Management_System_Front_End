@@ -13,6 +13,14 @@ import { CustomerComponent } from './customer.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SliderComponent } from './slider/slider.component';
+import { ChatbotComponent } from './chatbot/chatbot.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from '../app-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { LatestProductsComponent } from './latest-products/latest-products.component';
+import { Banner1Component } from './banner1/banner1.component';
+import { Banner2Component } from './banner2/banner2.component';
 
 
 @NgModule({
@@ -27,11 +35,20 @@ import { SliderComponent } from './slider/slider.component';
     CustomerComponent,
     HeaderComponent,
     FooterComponent,
-    SliderComponent
+    SliderComponent,
+    ChatbotComponent,
+    LatestProductsComponent,
+    Banner1Component,
+    Banner2Component
   ],
   imports: [
     CommonModule,
-    CustomerRoutingModule
+    CustomerRoutingModule,
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ]
 })
 export class CustomerModule { }

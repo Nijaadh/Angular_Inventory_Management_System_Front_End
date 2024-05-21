@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WhyusComponent } from './whyus.component';
+import { Banner1Component } from './banner1.component';
 
-describe('WhyusComponent', () => {
-  let component: WhyusComponent;
-  let fixture: ComponentFixture<WhyusComponent>;
+describe('Banner1Component', () => {
+  let component: Banner1Component;
+  let fixture: ComponentFixture<Banner1Component>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [WhyusComponent]
+      declarations: [Banner1Component]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(WhyusComponent);
+    fixture = TestBed.createComponent(Banner1Component);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,1 +1,50 @@
-<p>testimonial works!</p>
+<div class="testimonial-container">
+    <button class="nav-button prev" (click)="prevTestimonial()">&#8249;</button>
+    <div class="testimonial">
+      <div class="avatar">
+        <img [src]="testimonials[currentTestimonialIndex].image" alt="Avatar">
+      </div>
+      <div class="content">
+        <span class="name">{{testimonials[currentTestimonialIndex].name}}</span>
+        <p class="description">
+            {{testimonials[currentTestimonialIndex].description}}
+        </p>
+        <p class="description">
+            <ng-container *ngIf="testimonials[currentTestimonialIndex].rating == 1; else notRated">
+                <i class="fa fa-star"  style="color: #ff4081;"  aria-hidden="true"></i>
+            </ng-container>
+            <ng-container *ngIf="testimonials[currentTestimonialIndex].rating == 2; else notRated">
+                <i class="fa fa-star"  style="color: #ff4081;"  aria-hidden="true"></i>
+                <i class="fa fa-star"  style="color: #ff4081;"  aria-hidden="true"></i>
+            </ng-container>
+            <ng-container *ngIf="testimonials[currentTestimonialIndex].rating == 3; else notRated">
+                <i class="fa fa-star" style="color: #ff4081;"  aria-hidden="true"></i>
+                <i class="fa fa-star"  style="color: #ff4081;" aria-hidden="true"></i>
+                <i class="fa fa-star"  style="color: #ff4081;" aria-hidden="true"></i>
+            </ng-container>
+            <ng-container *ngIf="testimonials[currentTestimonialIndex].rating == 4; else notRated">
+                <i class="fa fa-star"  style="color: #ff4081;"  aria-hidden="true"></i>
+                <i class="fa fa-star"  style="color: #ff4081;"  aria-hidden="true"></i>
+                <i class="fa fa-star"   style="color: #ff4081;"  aria-hidden="true"></i>
+                <i class="fa fa-star"   style="color: #ff4081;"  aria-hidden="true"></i>
+            </ng-container>
+            <ng-container *ngIf="testimonials[currentTestimonialIndex].rating == 5; else notRated">
+                <i class="fa fa-star"  style="color: #ff4081;"  aria-hidden="true"></i>
+                <i class="fa fa-star"  style="color: #ff4081;"  aria-hidden="true"></i>
+                <i class="fa fa-star"  style="color: #ff4081;" aria-hidden="true"></i>
+                <i class="fa fa-star" style="color: #ff4081;" aria-hidden="true"></i>
+                <i class="fa fa-star" style="color: #ff4081;" aria-hidden="true"></i>
+            </ng-container>
+            <ng-template #notRated>
+                <!-- <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i> -->
+            </ng-template>
+          </p>
+          
+      </div>
+    </div>
+    <button class="nav-button next" (click)="nextTestimonial()">&#8250;</button>
+</div>

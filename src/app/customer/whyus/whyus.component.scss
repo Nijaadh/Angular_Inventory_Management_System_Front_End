@@ -1,0 +1,74 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .why-us {
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    z-index: 0;
+  }
+  
+  .why-us h1 {
+    font-size: 32px;
+    color: #9b59b6; /* Purple */
+    margin-bottom: 20px;
+  }
+  
+  .reasons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .reason {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    padding: 20px;
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+  }
+  
+  .reason i {
+    font-size: 48px;
+    color: #e84395; /* Pink */
+    margin-bottom: 10px;
+  }
+  
+  .reason h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .reason p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+  }
+  
+  /* Responsive Styles */
+  @media (min-width: 768px) {
+    .reasons {
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  
+    .reason {
+      flex: 1;
+      margin: 10px;
+      max-width: calc(33.333% - 20px); /* Three columns layout */
+    }
+  }
+  
