@@ -18,9 +18,9 @@ const routes: Routes = [
     {path:"home#testimonial",component:TestimonialComponent},
     {path:"home#contactus",component:ContactusComponent},
 
-    {path:"login",component:LoginComponent}
+    
   ]},
-
+  {path:"login",component:LoginComponent}
   
 ];
 
