@@ -1,326 +1,112 @@
-<!-- <div class="main-container1">
-    <div class="container">
-        <div class="form-box">
-            <form>
-                <div class="form-group">
-                    <label for="agency-id">Agency ID:</label>
-                    <input type="text" id="agency-id" name="agency-id">
-                </div>
-                <div class="form-group">
-                    <label for="agency-name">Agency Name:</label>
-                    <input type="text" id="agency-name" name="agency-name">
-                </div>
-                <div class="form-group">
-                    <label for="br-no">BR No:</label>
-                    <input type="text" id="br-no" name="br-no">
-                </div>
-                <div class="form-group">
-                    <label for="address">Address:</label>
-                    <input type="text" id="address" name="address">
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone:</label>
-                    <input type="text" id="phone" name="phone">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email">
-                </div>
-                <div class="form-group">
-                    <label for="company">Company:</label>
-                    <select id="company" name="company">
-                        <option value="COM">COM</option>
-                        
-                    </select>
-                </div>
-                <div class="form-buttons">
-                    <button type="submit" class="action-button add">Add</button>
-                    <button type="reset" class="action-button clear">Clear</button>
-                </div>
-            </form>
-            <div class="company-brand">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Company</th>
-                            <th>Brand</th>
-
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>001</td>
-                            <td>ABC</td>
-                        </tr>
-                        <tr>
-                            <td>001</td>
-                            <td>ABC</td>
-                        </tr>
-                        <tr>
-                            <td>001</td>
-                            <td>ABC</td>
-                        </tr>
-                </table>
-            </div>
-        </div>
-        <div class="bottom">
-            <div class="info-box">
-                <table>
-                    <tr>
-                        <td>Total Purchase</td>
-                        <td> 2770</td>
-                    </tr>
-                    <tr>
-                        <td>Total Sales</td>
-                        <td>229</td>
-                    </tr>
-                    <tr>
-                        <td>Total Returns</td>
-                        <td>222</td>
-                    </tr>
-                    <tr>
-                        <td>Registered Date</td>
-                        <td>2/14</td>
-                    </tr>
-                    <tr>
-                        <td>Updated Date</td>
-                        <td>3/3</td>
-                    </tr>
-                </table>
-
-            </div>
-            <div class="table-box">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>001</td>
-                            <td>ABC</td>
-                            <td>
-                                <button class="action-button view">View</button>
-                                <button class="action-button update">Update</button>
-                                <button class="action-button delete">Delete</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-</div> -->
-
-
-
-
-
-
-
-
-
-
 <div class="employee-management-container">
-    <h3>Company Mnagement</h3>
-
-    <button class="group cursor-pointer outline-none hover:rotate-90 duration-300 " title="Add New"
-        (click)="showANDhideAddComapnyContainer()">
-        <svg class="stroke-purple-500 fill-none group-hover:fill-white-800 group-active:stroke-teal-200 group-active:fill-teal-600 group-active:duration-0 duration-300"
-            viewBox="0 0 24 24" height="30px" width="30px" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-width="1.5"
-                d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z"></path>
-            <path stroke-width="1.5" d="M8 12H16"></path>
-            <path stroke-width="1.5" d="M12 16V8"></path>
-        </svg>
+    <h3>Company Management</h3>
+  
+    <button class="group cursor-pointer outline-none hover:rotate-90 duration-300" title="Add New"
+            (click)="showANDhideAddCompanyContainer()">
+      <svg class="stroke-purple-500 fill-none group-hover:fill-white-800 group-active:stroke-teal-200 group-active:fill-teal-600 group-active:duration-0 duration-300"
+           viewBox="0 0 24 24" height="30px" width="30px" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-width="1.5"
+              d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z"></path>
+        <path stroke-width="1.5" d="M8 12H16"></path>
+        <path stroke-width="1.5" d="M12 16V8"></path>
+      </svg>
     </button>
-
+  
     <div class="main-container">
-
-        <div class="employee-Registration-container" [hidden]="isHiddenAddCompanyContainer">
-
-            <h4 style="text-align: center; margin-bottom: 8px;">Company Registration</h4>
-
-            <div class="emp-id-container">
-                <span id="lbl-emp-idLabel">ID :</span>
-                <span id="lbl-emp-id">{{"COM-001"}}</span>
-            </div>
-
-            <div class="add-company-container">
-
-                <div class="inner-container-cover">
-
-                    <div class="inner-container left-container" >
-
-                        <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">Name</label>
-                        <input type="text" name="first-name" id="first-name" autocomplete="given-name"
-                            class=" ins block w-full rounded-md border-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-
-                        <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">Hotline</label>
-                        <input type="text" name="first-name" id="first-name" autocomplete="given-name"
-                            class=" ins block w-full rounded-md border-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-
-                        <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">Gmail</label>
-                        <input type="text" name="first-name" id="first-name" autocomplete="given-name"
-                            class=" ins block w-full rounded-md border-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-
-                            <div class="col-span-full">
-                        
-                                <label for="emp-adress"
-                                    class="block text-sm font-medium leading-6 text-gray-900">Address</label>
-                                <div class="mt-2">
-                                    <textarea id="emp-address" name="emp-addres" rows="3" 
-                                        class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                        style="height: 98px;"></textarea>
-                                </div>
-        
-                            </div>
-
-
-                            <div class="button-group" style=" display: flex; align-items: end; justify-content: left; margin: 40px;">
-                                <button type="button" class="btn btn-primary"
-                                    style="width: 100px; margin-top: 0px; margin-right: 10px;">submit</button>
-                                <button type="button" class="btn btn-danger"
-                                    style="width: 100px; margin-top: 0px; margin-left: 10px;">clear</button>
-                            </div>
-
-                    </div>
-
-
-                    <div class="inner-container right-container" >
-                        <app-company-detail-card></app-company-detail-card>
-                    </div>
-
-
-                </div>
-
-            </div>
-
-            <!-- button area -->
-
+  
+      <div class="employee-Registration-container" [hidden]="isHiddenAddCompanyContainer">
+  
+        <h4 style="text-align: center; margin-bottom: 8px;">Company Registration</h4>
+  
+        <div class="emp-id-container">
+          <span id="lbl-emp-idLabel">ID :</span>
+          <span id="lbl-emp-id">{{ newCompany.comId }}</span>
         </div>
-
-        <table class="table table-striped table-hover rounded-lg"
-            style="width: 90vw; margin-left: auto;margin-right: auto; border-radius: 10px;">
-
-            <thead class="table-dark " style="border-radius: 10px;">
-                <tr>
-                    <th scope="col">No</th>
-                    <th scope="col">Company ID</th>
-                    <th scope="col">Company Name</th>
-                    <th scope="col">Rep Name</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Action</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                <tr *ngFor="let com of company; let i = index">
-                    <th scope="row">{{i+1}}</th>
-                    <td>{{com.cusId}}</td>
-                    <td>{{com.cusLName}}</td>
-                    <td>{{com.cusRoleId}}</td>
-                    <td>
-                        <button type="button"
-                            [ngClass]="{'btn-success': com.cusCommonStatus === 'ACTIVE','btn-danger': com.cusCommonStatus === 'INACTIVE'}"
-                            [style.border-]="com.cusCommonStatus === 'ACTIVE' ? 'green' : 'red'"
-                            [style.border-color]="com.cusCommonStatus === 'ACTIVE' ? 'green' : 'red'"
-                            [style.background-color]="com.cusCommonStatus === 'ACTIVE' ? '#d9f7e7' : '#ffcccc'"
-                            [style.color]="com.cusCommonStatus === 'ACTIVE' ? 'green' : 'red'"
-                            style="padding: 0.0rem 0.7rem; font-size: 0.75rem;border-radius: 0.3rem;border-style: solid;border-width: 1px;">
-                            {{com.cusCommonStatus === 'ACTIVE' ? 'Active' : 'Inactive'}}
-                        </button>
-                    </td>
-
-                    <td width="200em">
-
-                        <button type="button" class="btn btn-primary"
-                            style="padding: 0.25rem 0.5rem; font-size: 0.75rem; margin: 0rem 0.2rem;">View</button>
-                        <button type="button" class="btn btn-warning"
-                            style="padding: 0.25rem 0.5rem; font-size: 0.75rem; margin: 0rem 0.2rem;">Update</button>
-                        <button type="button" class="btn btn-danger"
-                            style="padding: 0.25rem 0.5rem; font-size: 0.75rem; margin: 0rem 0.2rem;">Delete</button>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>EMP-002</td>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td> <button type="button" class="btn btn-danger"
-                            style="border-color: green; background-color: #d9f7e7; color: green; padding: 0.0rem 0.7rem; font-size: 0.75rem;">Active</button>
-                    </td>
-                    <td width="200em">
-                        <button type="button" class="btn btn-primary"
-                            style="padding: 0.25rem 0.5rem; font-size: 0.75rem; margin: 0rem 0.2rem;">View</button>
-                        <button type="button" class="btn btn-warning"
-                            style="padding: 0.25rem 0.5rem; font-size: 0.75rem; margin: 0rem 0.2rem;">Update</button>
-                        <button type="button" class="btn btn-danger"
-                            style="padding: 0.25rem 0.5rem; font-size: 0.75rem; margin: 0rem 0.2rem;">Delete</button>
-
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>EMP-003</td>
-                    <td>Larry the Bird</td>
-                    <td>twitter</td>
-                    <td><button type="button" class="btn btn-danger"
-                            style="border-color: red; background-color: #ffcccc; color: red; padding: 0.0rem 0.7rem; font-size: 0.75rem;">Inactive</button>
-                    </td>
-                    <td width="200em">
-                        <button type="button" class="btn btn-primary"
-                            style="padding: 0.25rem 0.5rem; font-size: 0.75rem; margin: 0rem 0.2rem;">View</button>
-                        <button type="button" class="btn btn-warning"
-                            style="padding: 0.25rem 0.5rem; font-size: 0.75rem; margin: 0rem 0.2rem;">Update</button>
-                        <button type="button" class="btn btn-danger"
-                            style="padding: 0.25rem 0.5rem; font-size: 0.75rem; margin: 0rem 0.2rem;">Delete</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-
+  
+        <div class="add-company-container">
+  
+          <div class="inner-container-cover">
+  
+            <div class="inner-container left-container">
+  
+              <label for="company-name" class="block text-sm font-medium leading-6 text-gray-900">Name</label>
+              <input type="text" name="company-name" id="company-name" [(ngModel)]="newCompany.comName"
+                     class="ins block w-full rounded-md border-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+  
+              <label for="hotline" class="block text-sm font-medium leading-6 text-gray-900">Hotline</label>
+              <input type="text" name="hotline" id="hotline" [(ngModel)]="newCompany.hotline"
+                     class="ins block w-full rounded-md border-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+  
+              <label for="gmail" class="block text-sm font-medium leading-6 text-gray-900">Gmail</label>
+              <input type="text" name="gmail" id="gmail" [(ngModel)]="newCompany.gmail"
+                     class="ins block w-full rounded-md border-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+  
+              <div class="col-span-full">
+                <label for="address" class="block text-sm font-medium leading-6 text-gray-900">Address</label>
+                <div class="mt-2">
+                  <textarea id="address" name="address" rows="3" [(ngModel)]="newCompany.address"
+                            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                            style="height: 98px;"></textarea>
+                </div>
+              </div>
+  
+              <div class="button-group" style="display: flex; align-items: end; justify-content: left; margin: 40px;">
+                <button type="button" class="btn btn-primary" style="width: 100px; margin-top: 0px; margin-right: 10px;"
+                        (click)="saveCompany()">Submit</button>
+                <button type="button" class="btn btn-danger" style="width: 100px; margin-top: 0px; margin-left: 10px;">Clear</button>
+              </div>
+  
+            </div>
+  
+            <div class="inner-container right-container">
+              <app-company-detail-card></app-company-detail-card>
+            </div>
+  
+          </div>
+  
+        </div>
+  
+      </div>
+  
+      <table class="table table-striped table-hover rounded-lg"
+             style="width: 90vw; margin-left: auto; margin-right: auto; border-radius: 10px;">
+  
+        <thead class="table-dark" style="border-radius: 10px;">
+        <tr>
+          <th scope="col">No</th>
+          <th scope="col">Company ID</th>
+          <th scope="col">Company Name</th>
+          <th scope="col">Rep Name</th>
+          <th scope="col">Status</th>
+          <th scope="col">Action</th>
+        </tr>
+        </thead>
+  
+        <tbody>
+        <tr *ngFor="let com of company; let i = index">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ com.comId }}</td>
+          <td>{{ com.comName }}</td>
+          <td>{{ com.commonStatus }}</td>
+          <td>
+            <button type="button"
+                    [ngClass]="{'btn-success': com.commonStatus === 'ACTIVE', 'btn-danger': com.commonStatus === 'INACTIVE'}"
+                    [style.border-color]="com.commonStatus === 'ACTIVE' ? 'green' : 'red'"
+                    [style.background-color]="com.commonStatus === 'ACTIVE' ? '#d9f7e7' : '#ffcccc'"
+                    [style.color]="com.commonStatus === 'ACTIVE' ? 'green' : 'red'"
+                    style="padding: 0.0rem 0.7rem;">
+              {{ com.commonStatus === 'ACTIVE' ? 'Active' : 'Inactive' }}
+            </button>
+          </td>
+          <td width="200em">
+            <button type="button" class="btn btn-primary" style="padding: 0.25rem 0.5rem; font-size: 0.75rem; margin: 0rem 0.2rem;">View</button>
+            <button type="button" class="btn btn-warning" style="padding: 0.25rem 0.5rem; font-size: 0.75rem; margin: 0rem 0.2rem;">Update</button>
+            <button type="button" class="btn btn-danger" style="padding: 0.25rem 0.5rem; font-size: 0.75rem; margin: 0rem 0.2rem;">Delete</button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+  
     </div>
-
-
-
-
-</div>
-
-
-
-
-<!-- radio button -->
-
-
-<!-- <div class="  form-check">
-        <input class="form-check-input" type="radio" name="gender" id="exampleRadios2"
-            value="option2">
-        <label class="form-check-label" for="exampleRadios2">
-            Female
-        </label>
-    </div>
-
-
-
-    <div class="form-check nm">
-        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-        <label class="form-check-label" for="defaultCheck1">
-            Birthday Shoots
-        </label>
-    </div>
-
-
-<br/><br/>
-
-    
-
-                    <div class="lab sm:col-span-3">
-                        <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">Firstname</label>
-                        <div class="mt-2">
-                            <input type="text" name="first-name" id="first-name" autocomplete="given-name"class=" ins block w-full rounded-md border-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                        </div>
-                    </div> -->
+  </div>
+  

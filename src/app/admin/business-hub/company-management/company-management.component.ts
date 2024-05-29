@@ -1,92 +1,62 @@
 import { Component, OnInit } from '@angular/core';
 import { Company } from './Models/company.model';
+import { CompanyService } from './Services/company.service';
+import { CommonResponse } from './Models/commonResponse';
 
 @Component({
   selector: 'app-company-management',
   templateUrl: './company-management.component.html',
-  styleUrl: './company-management.component.scss'
+  styleUrls: ['./company-management.component.scss']
 })
-export class CompanyManagementComponent implements OnInit{
+export class CompanyManagementComponent implements OnInit {
  
   public isHiddenAddCompanyContainer: boolean = false;
+  public company: Company[] = [];
+  public newCompany: Company = {
+    comId: 0,
+    comName: 'ew',
+    hotline: '333',
+    gmail: 'gfgfgfg',
+    address: 'dfdf',
+    commonStatus: 'ACTIVE'
+  };
+  public companyIdToUpdate: number | undefined;
+  public companyIdToDelete: number | undefined;
 
-  public comLastEmployeeId: String | undefined="000";
-
-  public company:Company[]=[];
-
-  comID: String | undefined = this.comLastEmployeeId;
-  comFName: String = "";
-  comLName: String = "";
-  comNic: String = "";
-  comGender: String = "";
-  comGmail: String = "";
-  comDOB: String = "";
-  comContactNo: String = "";
-  comEMGContactNo: String = "";
-  comAddress: String = "";
-  comUserName: String = "";
-  comUserRole: String = "";
-  comPassword: String = "";
-  comConformPassword: String = "";
-  
-  constructor(){
-
-  }
+  constructor(private companyService: CompanyService) {}
 
   ngOnInit(): void {
-    
-
-
     this.isHiddenAddCompanyContainer = true;
-    //this.getEmployeeList();
-
-    this.company = [
-      {
-        cusId: "CUS-001",
-        cusFName: "Mohomed",
-        cusLName: "Nijaadh",
-        cusNic: "200021701711",
-        cusGender: "Male",
-        cusGmail: "mohomednijaadh.net@gmail.com",
-        cusDOB: "2000.08.04",
-        cusContactNo: "0774411765",
-        cusEMGContactNo: "0771234567",
-        cusAddress: "No.61/29 Kandy rd. Thihariya, Kalagedihena",
-        cusUserName: "maku",
-        cusPassword: "Nijaadh20#",
-        cusCommonStatus: "ACTIVE",
-        cusRoleId: "Admin",
-        cusRegDate: "2024.05.15",
-        cusUpdDate: "2024.05.15"
-
-      },
-      {
-
-        cusId: "CUS-002",
-        cusFName: "Zeenathul",
-        cusLName: "Fahira",
-        cusNic: "199911601622",
-        cusGender: "Female",
-        cusGmail: "zeenathulfahira.net@gmail.com",
-        cusDOB: "1999.04.20",
-        cusContactNo: "0774411765",
-        cusEMGContactNo: "0774411765",
-        cusAddress: "No. 255 mount rd. lavania, canada",
-        cusUserName: "zeena",
-        cusPassword: "Zeena19*",
-        cusCommonStatus: "INACTIVE",
-        cusRoleId: "Manager",
-        cusRegDate: "2024.05.15",
-        cusUpdDate: "2024.05.15"
-
-
-      }
-    ]
-
+    this.getAllCompanies();
+    
   }
 
+  getAllCompanies(): void {
+    this.companyService.getAllCompanies()
+      .subscribe(
+        (response: CommonResponse) => {
+          if (response.status) {
+            this.company = response.payload;
+          } else {
+            console.error('Error fetching companies:', response.commonMessage);
+          }
+        },
+        (error: any) => {
+          console.error('Error fetching companies:', error);
+        }
+      );
+  }
 
-  showANDhideAddComapnyContainer(): void {
+  // public showANDhideAddCompanyContainer(): void {
+  //   this.isHiddenAddCompanyContainer = !this.isHiddenAddCompanyContainer;
+  // }
+
+//  showANDhideAddCompanyContainer() {
+//     this.isHiddenAddCompanyContainer = !this.isHiddenAddCompanyContainer;
+//   }
+
+
+  showANDhideAddCompanyContainer(): void {
     if (this.isHiddenAddCompanyContainer == true) {
       this.isHiddenAddCompanyContainer = false;
     }
@@ -97,10 +67,92 @@ export class CompanyManagementComponent implements OnInit{
 
   }
 
+  saveCompany(): void {
+    this.companyService.saveCompany(this.newCompany)
+      .subscribe(
+        (response: CommonResponse) => {
+          if (response.status) {
+            this.getAllCompanies();
+            console.log('Company saved successfully.');
+          } else {
+            console.error('Error saving company:', response.commonMessage);
+          }
+        },
+        (error: any) => {
+          console.error('Error saving company:', error);
+        }
+      );
+  }
+
+  updateCompany(): void {
+    if (this.companyIdToUpdate) {
+      this.companyService.updateCompany(this.newCompany)
+        .subscribe(
+          (response: CommonResponse) => {
+            if (response.status) {
+              this.getAllCompanies();
+              console.log('Company updated successfully.');
+            } else {
+              console.error('Error updating company:', response.commonMessage);
+            }
+          },
+          (error: any) => {
+            console.error('Error updating company:', error);
+          }
+        );
+    } else {
+      console.error('No company ID specified for updating.');
+    }
+  }
+
+  deleteCompany(): void {
+    if (this.companyIdToDelete) {
+      this.companyService.deleteCompany(this.companyIdToDelete)
+        .subscribe(
+          (response: CommonResponse) => {
+            if (response.status) {
+              this.getAllCompanies();
+              console.log('Company deleted successfully.');
+            } else {
+              console.error('Error deleting company:', response.commonMessage);
+            }
+          },
+          (error: any) => {
+            console.error('Error deleting company:', error);
+          }
+        );
+    } else {
+      console.error('No company ID specified for deletion.');
+    }
+  }
+
+  getCompanyById(companyId: number): void {
+    this.companyService.getCompany(companyId)
+      .subscribe(
+        (response: CommonResponse) => {
+          if (response.status) {
+            // Handle the company data as needed
+            console.log('Company:', response.payload);
+          } else {
+            console.error('Error fetching company by ID:', response.commonMessage);
+          }
+        },
+        (error: any) => {
+          console.error('Error fetching company by ID:', error);
+        }
+      );
+  }
 
   onGenderChange(selectedGender: string): void {
-    this.comGender = selectedGender;
+    // Implement as needed
   }
-  
 
+  // showANDhideAddCompanyContainer(): void {
+  //   if (this.isHiddenAddCompanyContainer == true) {
+  //     this.isHiddenAddCompanyContainer = false;
+  //   } else if (this.isHiddenAddCompanyContainer == false) {
+  //     this.isHiddenAddCompanyContainer = true;
+  //   }
+  // }
+  
 }

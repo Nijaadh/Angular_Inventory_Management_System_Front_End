@@ -178,12 +178,12 @@
                     <div class="inner-container left-container" >
 
                         <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">Item Name</label>
-                        <input type="text" name="first-name" id="first-name" autocomplete="given-name"
+                        <input type="text" name="first-name" id="first-name" autocomplete="given-name" [(ngModel)]="item.itemName";
                             class=" ins block w-full rounded-md border-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
 
 
                             <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">Catagory</label>
-                            <select class=" ins block w-full rounded-md border-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                            <select class=" ins block w-full rounded-md border-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" [(ngModel)]="item.itemCatId";> 
                                 <option>Facewash</option>
                                 <option>Scrub</option>
                                 <option>Clenser</option>
@@ -191,22 +191,22 @@
 
 
                         <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">Discription</label>
-                        <input type="text" name="first-name" id="first-name" autocomplete="given-name"
+                        <input type="text" name="first-name" id="first-name" autocomplete="given-name" [(ngModel)]="item.itemDiscription";
                             class=" ins block w-full rounded-md border-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
 
                         <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">Quantity</label>
-                        <input type="text" name="first-name" id="first-name" autocomplete="given-name"
+                        <input type="text" name="first-name" id="first-name" autocomplete="given-name" [(ngModel)]="item.itemQty";
                             class=" ins block w-full rounded-md border-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
 
                             <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">Price</label>
-                            <input type="text" name="first-name" id="first-name" autocomplete="given-name"
+                            <input type="text" name="first-name" id="first-name" autocomplete="given-name" [(ngModel)]="item.itemPrice";
                                 class=" ins block w-full rounded-md border-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
     
                                 
 
 
                                 <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">Image</label>
-<input class="form-control form-control-sm rounded-md border-3 focus:ring-indigo-600" id="formFileSm" type="file" />
+<input class="form-control form-control-sm rounded-md border-3 focus:ring-indigo-600" id="formFileSm" type="file" [(ngModel)]="item.itemImage";/>
 <!-- <label for="formFileLg" class="form-label">Large file input example</label>
 <input class="form-control form-control-lg" id="formFileLg" type="file" /> -->
 
@@ -270,29 +270,29 @@
                 <tr *ngFor="let itm of items    ; let i = index">
                     <th scope="row">{{i+1}}</th>
                     <td>{{itm.itemId}}</td>
-                    <td>{{itm.itemComName}}</td>
+                    <td>{{itm.itemComId}}</td>
                     <td>{{itm.itemName}}</td>
                     <td>
                         <button type="button"
-                            [ngClass]="{'btn-success': itm.itemComStatus === 'ACTIVE','btn-danger': itm.itemComStatus === 'INACTIVE'}"
-                            [style.border-]="itm.itemComStatus === 'ACTIVE' ? 'green' : 'red'"
-                            [style.border-color]="itm.itemComStatus === 'ACTIVE' ? 'green' : 'red'"
-                            [style.background-color]="itm.itemComStatus === 'ACTIVE' ? '#d9f7e7' : '#ffcccc'"
-                            [style.color]="itm.itemComStatus === 'ACTIVE' ? 'green' : 'red'"
+                            [ngClass]="{'btn-success': itm.itemCommonStatus === 'ACTIVE','btn-danger': itm.itemCommonStatus === 'INACTIVE'}"
+                            [style.border-]="itm.itemCommonStatus === 'ACTIVE' ? 'green' : 'red'"
+                            [style.border-color]="itm.itemCommonStatus === 'ACTIVE' ? 'green' : 'red'"
+                            [style.background-color]="itm.itemCommonStatus === 'ACTIVE' ? '#d9f7e7' : '#ffcccc'"
+                            [style.color]="itm.itemCommonStatus === 'ACTIVE' ? 'green' : 'red'"
                             style="padding: 0.0rem 0.7rem; font-size: 0.75rem;border-radius: 0.3rem;border-style: solid;border-width: 1px;">
-                            {{itm.itemComStatus === 'ACTIVE' ? 'Available' : 'NotAvailable'}}
+                            {{itm.itemCommonStatus === 'ACTIVE' ? 'Available' : 'NotAvailable'}}
                         </button>
                     </td>
 
                     <td>
                         <button type="button"
-                            [ngClass]="{'btn-success': itm.itemComStatus === 'ACTIVE','btn-danger': itm.itemComStatus === 'INACTIVE'}"
-                            [style.border-]="itm.itemComStatus === 'ACTIVE' ? 'green' : 'red'"
-                            [style.border-color]="itm.itemComStatus === 'ACTIVE' ? 'green' : 'red'"
-                            [style.background-color]="itm.itemComStatus === 'ACTIVE' ? '#d9f7e7' : '#ffcccc'"
-                            [style.color]="itm.itemComStatus === 'ACTIVE' ? 'green' : 'red'"
+                            [ngClass]="{'btn-success': itm.itemCommonStatus === 'ACTIVE','btn-danger': itm.itemCommonStatus === 'INACTIVE'}"
+                            [style.border-]="itm.itemCommonStatus === 'ACTIVE' ? 'green' : 'red'"
+                            [style.border-color]="itm.itemCommonStatus === 'ACTIVE' ? 'green' : 'red'"
+                            [style.background-color]="itm.itemCommonStatus === 'ACTIVE' ? '#d9f7e7' : '#ffcccc'"
+                            [style.color]="itm.itemCommonStatus === 'ACTIVE' ? 'green' : 'red'"
                             style="padding: 0.0rem 0.7rem; font-size: 0.75rem;border-radius: 0.3rem;border-style: solid;border-width: 1px;">
-                            {{itm.itemComStatus === 'ACTIVE' ? 'Active' : 'Inactive'}}
+                            {{itm.itemCommonStatus === 'ACTIVE' ? 'Active' : 'Inactive'}}
                         </button>
                     </td>
 

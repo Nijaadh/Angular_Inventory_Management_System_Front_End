@@ -11,6 +11,7 @@ import { SaleseRepManagementComponent } from './business-hub/salese-rep-manageme
 import { PurcheseComponent } from './purchese/purchese.component';
 import { GrnManagementComponent } from './purchese/grn-management/grn-management.component';
 import { InvoiceComponent } from './salese/invoice/invoice.component';
+import { ProductManagementComponent } from './business-hub/product-management/product-management.component';
 
 
 const routes: Routes = [
@@ -25,6 +26,7 @@ const routes: Routes = [
       {path:"brandmanagement",component:BrandManagementComponent},
       {path:"agencymanagement",component:AgencyManagementComponent},
       {path:"saleserepmanagement",component:SaleseRepManagementComponent},
+      {path:"productmanagement",component:ProductManagementComponent},
     ]},
 
     {path:"purches",component:PurcheseComponent,children:[
@@ -37,7 +39,10 @@ const routes: Routes = [
        
     ]}
    
-  ]}
+  ]},
+
+  {path:"productmanagement",component:ProductManagementComponent},
+       
 ];
 
 @NgModule({

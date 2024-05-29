@@ -10,8 +10,11 @@ import { SaleseRepManagementComponent } from './salese-rep-management/salese-rep
 import { ProductManagementComponent } from './product-management/product-management.component';
 import { PriceManagementComponent } from './price-management/price-management.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, provideHttpClient } from '@angular/common/http';
 import { CompanyDetailCardComponent } from './company-management/Components/company-detail-card/company-detail-card.component';
+import { CompanyService } from './company-management/Services/company.service';
+import { provideRouter, ROUTES } from '@angular/router';
+
 
 
 @NgModule({
@@ -29,7 +32,12 @@ import { CompanyDetailCardComponent } from './company-management/Components/comp
     CommonModule,
     BusinessHubRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    
+  ],
+  providers: [
+    CompanyService,
+    provideHttpClient()  // Ensure CompanyService is provided here
   ],
   
 })
