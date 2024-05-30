@@ -13,14 +13,13 @@ export class CompanyService {
 
   constructor(private http: HttpClient) { }
 
-  saveCompany(companyDTO: any): Observable<CommonResponse> {
-    return this.http.post<CommonResponse>(`${this.apiUrl}/saveCompany`, companyDTO)
-      .pipe(
-        catchError(this.handleError)
-      );
+  saveCompany(companyDTO: Company): Observable<CommonResponse> {
+  
+      return this.http.post<CommonResponse>(`${this.apiUrl}/saveCompany`, companyDTO);
+ 
   }
 
-  updateCompany(companyDTO: any): Observable<CommonResponse> {
+  updateCompany(companyDTO: Company): Observable<CommonResponse> {
     return this.http.put<CommonResponse>(`${this.apiUrl}/updateCompany`, companyDTO)
       .pipe(
         catchError(this.handleError)

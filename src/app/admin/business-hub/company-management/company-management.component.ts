@@ -11,17 +11,21 @@ import { CommonResponse } from './Models/commonResponse';
 export class CompanyManagementComponent implements OnInit {
  
   public isHiddenAddCompanyContainer: boolean = false;
-  public company: Company[] = [];
+  public companyIdToUpdate: number | undefined;
+  public companyIdToDelete: number | undefined;
+
+
+  public company: any = [];
   public newCompany: Company = {
-    comId: 0,
+    comId: 99,
     comName: 'ew',
     hotline: '333',
     gmail: 'gfgfgfg',
     address: 'dfdf',
-    commonStatus: 'ACTIVE'
+    commonStatus: 0
   };
-  public companyIdToUpdate: number | undefined;
-  public companyIdToDelete: number | undefined;
+
+
 
   constructor(private companyService: CompanyService) {}
 
@@ -36,7 +40,9 @@ export class CompanyManagementComponent implements OnInit {
       .subscribe(
         (response: CommonResponse) => {
           if (response.status) {
-            this.company = response.payload;
+            // const temp = 
+            this.company=(response.payload);
+            console.log(this.company);
           } else {
             console.error('Error fetching companies:', response.commonMessage);
           }
@@ -47,34 +53,19 @@ export class CompanyManagementComponent implements OnInit {
       );
   }
 
-  // public showANDhideAddCompanyContainer(): void {
-  //   this.isHiddenAddCompanyContainer = !this.isHiddenAddCompanyContainer;
-  // }
 
-//  showANDhideAddCompanyContainer() {
-//     this.isHiddenAddCompanyContainer = !this.isHiddenAddCompanyContainer;
-//   }
-
-
-  showANDhideAddCompanyContainer(): void {
-    if (this.isHiddenAddCompanyContainer == true) {
-      this.isHiddenAddCompanyContainer = false;
-    }
-    else if (this.isHiddenAddCompanyContainer == false) {
-      this.isHiddenAddCompanyContainer = true;
-    }
-
-
-  }
 
   saveCompany(): void {
-    this.companyService.saveCompany(this.newCompany)
-      .subscribe(
+    console.log(this.newCompany);
+    
+    this.companyService.saveCompany(this.newCompany).subscribe(
         (response: CommonResponse) => {
+
           if (response.status) {
-            this.getAllCompanies();
+            // this.getAllCompanies();
             console.log('Company saved successfully.');
           } else {
+            console.log(response.errorMessages)
             console.error('Error saving company:', response.commonMessage);
           }
         },
@@ -146,6 +137,28 @@ export class CompanyManagementComponent implements OnInit {
   onGenderChange(selectedGender: string): void {
     // Implement as needed
   }
+
+  showANDhideAddCompanyContainer(): void {
+    if (this.isHiddenAddCompanyContainer == true) {
+      this.isHiddenAddCompanyContainer = false;
+    }
+    else if (this.isHiddenAddCompanyContainer == false) {
+      this.isHiddenAddCompanyContainer = true;
+    }
+
+
+  }
+
+  onClick(companyData: Company){
+    this.isHiddenAddCompanyContainer=true;
+    this.showANDhideAddCompanyContainer();
+    console.log(companyData);
+    this.newCompany.comId = companyData.comId
+    
+  }
+
+
+
 
   // showANDhideAddCompanyContainer(): void {
   //   if (this.isHiddenAddCompanyContainer == true) {

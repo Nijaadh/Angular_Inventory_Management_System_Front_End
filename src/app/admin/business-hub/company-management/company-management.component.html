@@ -73,34 +73,35 @@
   
         <thead class="table-dark" style="border-radius: 10px;">
         <tr>
-          <th scope="col">No</th>
+          <!-- <th scope="col">No</th> -->
           <th scope="col">Company ID</th>
           <th scope="col">Company Name</th>
-          <th scope="col">Rep Name</th>
+          <th scope="col">Email</th>
           <th scope="col">Status</th>
           <th scope="col">Action</th>
         </tr>
         </thead>
   
         <tbody>
-        <tr *ngFor="let com of company; let i = index">
-          <th scope="row">{{ i + 1 }}</th>
+        <tr *ngFor="let com of company[0]; let i = index">
+          <!-- <th scope="row">{{ i + 1 }}</th> -->
           <td>{{ com.comId }}</td>
           <td>{{ com.comName }}</td>
-          <td>{{ com.commonStatus }}</td>
+          <td>{{ com.gmail }}</td>
+          <!-- <td>{{ com.commonStatus }}</td> -->
           <td>
             <button type="button"
-                    [ngClass]="{'btn-success': com.commonStatus === 'ACTIVE', 'btn-danger': com.commonStatus === 'INACTIVE'}"
-                    [style.border-color]="com.commonStatus === 'ACTIVE' ? 'green' : 'red'"
-                    [style.background-color]="com.commonStatus === 'ACTIVE' ? '#d9f7e7' : '#ffcccc'"
-                    [style.color]="com.commonStatus === 'ACTIVE' ? 'green' : 'red'"
+                    [ngClass]="{'btn-success': com.commonStatus === 0, 'btn-danger': com.commonStatus === 1}"
+                    [style.border-color]="com.commonStatus === 0 ? 'green' : 'red'"
+                    [style.background-color]="com.commonStatus === 0 ? '#d9f7e7' : '#ffcccc'"
+                    [style.color]="com.commonStatus === 0 ? 'green' : 'red'"
                     style="padding: 0.0rem 0.7rem;">
-              {{ com.commonStatus === 'ACTIVE' ? 'Active' : 'Inactive' }}
+              {{ com.commonStatus === 0 ? 'Active' : 'Inactive' }}
             </button>
           </td>
           <td width="200em">
             <button type="button" class="btn btn-primary" style="padding: 0.25rem 0.5rem; font-size: 0.75rem; margin: 0rem 0.2rem;">View</button>
-            <button type="button" class="btn btn-warning" style="padding: 0.25rem 0.5rem; font-size: 0.75rem; margin: 0rem 0.2rem;">Update</button>
+            <button type="button" class="btn btn-warning" style="padding: 0.25rem 0.5rem; font-size: 0.75rem; margin: 0rem 0.2rem;" (click)="onClick(com)">Update</button>
             <button type="button" class="btn btn-danger" style="padding: 0.25rem 0.5rem; font-size: 0.75rem; margin: 0rem 0.2rem;">Delete</button>
           </td>
         </tr>

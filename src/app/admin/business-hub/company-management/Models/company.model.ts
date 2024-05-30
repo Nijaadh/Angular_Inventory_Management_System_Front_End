@@ -4,5 +4,5 @@ export interface Company {
     hotline: string;
     gmail: string;
     address: string;
-    commonStatus: string;
+    commonStatus: number;
   }
